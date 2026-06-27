@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FanFicHub | Discover Authors</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+        FanFicHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Explore
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+              <li><a class="dropdown-item" href="explore-stories.html">Browse Stories</a></li>
+              <li><a class="dropdown-item" href="fandoms.html">Browse Fandoms</a></li>
+              <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Community
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
+              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
+              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <div class="d-flex ms-3 gap-2 align-items-center">
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+          <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
+          <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="bg-main py-5 border-bottom">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Discover Authors</h1>
+      <p class="lead text-muted">Follow talented writers and never miss a new chapter.</p>
+    </div>
+  </div>
+
+  <!-- Authors Content -->
+  <div class="container py-5">
+    <div class="row g-4">
+      <!-- Search & Filters -->
+      <div class="col-12 mb-4">
+        <div class="card card-custom border-0 shadow-sm p-4">
+          <div class="row g-3 align-items-center">
+            <div class="col-md-5">
+              <input type="text" class="form-control form-control-custom" placeholder="Search authors by username...">
+            </div>
+            <div class="col-md-4">
+              <select class="form-select form-control-custom">
+                <option>All Genres</option>
+                <option>Fantasy</option>
+                <option>Sci-Fi</option>
+                <option>Romance</option>
+                <option>Action</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <button class="btn btn-primary-custom w-100">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Authors Grid -->
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <p class="mb-0 text-muted">Showing <strong>Trending Authors</strong></p>
+          <select class="form-select w-auto form-control-custom">
+            <option>Trending</option>
+            <option>Most Followers</option>
+            <option>Most Stories</option>
+            <option>Newest</option>
+          </select>
+        </div>
+
+        <div class="row g-4">
+          <!-- Author Card 1 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=47" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">StarkFan99</h5>
+                <p class="text-muted small mb-3">@starkfan99</p>
+                <p class="small px-3 mb-4 flex-grow-1">Marvel enthusiast writing mostly about Tony Stark and Peter Parker dynamics. Always open to prompts!</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">12</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">8.4k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Card 2 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=32" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">MagicWriter</h5>
+                <p class="text-muted small mb-3">@magicwriter</p>
+                <p class="small px-3 mb-4 flex-grow-1">Hogwarts Alumni. Slytherin. Creating dark fantasy stories and alternative universe HP fics.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">24</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">15.2k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Card 3 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=12" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">NinjaWay</h5>
+                <p class="text-muted small mb-3">@ninjaway</p>
+                <p class="small px-3 mb-4 flex-grow-1">Anime fan writing epic battles and deep character studies for Naruto and Bleach.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">8</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">5.1k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Card 4 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=59" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">BatFan</h5>
+                <p class="text-muted small mb-3">@batfan_dc</p>
+                <p class="small px-3 mb-4 flex-grow-1">Gotham is my playground. Writing noir and mystery fanfics in the DC Universe.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">15</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">10.8k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Card 5 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=5" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">SpaceWriter99</h5>
+                <p class="text-muted small mb-3">@spacewriter99</p>
+                <p class="small px-3 mb-4 flex-grow-1">Sci-Fi lover. Expanding the Star Wars and Mass Effect universes with original characters.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">31</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">22.1k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Author Card 6 -->
+          <div class="col-md-4">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <img src="https://i.pravatar.cc/150?img=22" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">HeartFelt</h5>
+                <p class="text-muted small mb-3">@heartfelt_romance</p>
+                <p class="small px-3 mb-4 flex-grow-1">Romance and slice of life. I specialize in slow-burn relationships across various anime.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">45</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">34.5k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pagination -->
+        <nav class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-custom mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand mb-3 justify-content-start" href="index.html">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+            FanFicHub
+          </a>
+          <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">Community News</a></li>
+            <li class="mb-2"><a href="contact.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Legal</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-title h6">Newsletter</h4>
+          <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
+          <form class="d-flex gap-2 needs-validation" novalidate>
+            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+            <button class="btn btn-primary-custom" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        &copy; 2026 FanFicHub. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

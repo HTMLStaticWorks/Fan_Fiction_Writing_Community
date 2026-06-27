@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Story Preview | Fan Fiction Writing Community</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <style>
+    .reading-content {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+        FanFicHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Explore
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+              <li><a class="dropdown-item" href="explore-stories.html">Browse Stories</a></li>
+              <li><a class="dropdown-item" href="fandoms.html">Browse Fandoms</a></li>
+              <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Community
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
+              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
+              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <div class="d-flex ms-3 gap-2 align-items-center">
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+          <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
+          <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid pb-5">
+    <div class="row">
+      <!-- Advanced Search / Filter Sidebar -->
+      <nav id="filterSidebar" class="col-md-3 col-lg-2 d-none d-md-block bg-white sidebar border-end vh-100 py-3 overflow-auto">
+        <div class="px-3 mb-4">
+          <h5 class="fw-bold mb-3">Filter Stories</h5>
+          
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-muted text-uppercase">Fandom</label>
+            <select class="form-select form-select-sm bg-light border-0">
+              <option selected>Marvel Cinematic Universe</option>
+              <option>Harry Potter</option>
+              <option>Star Wars</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-muted text-uppercase">Characters</label>
+            <input type="text" class="form-control form-control-sm bg-light border-0 mb-1" placeholder="e.g. Tony Stark">
+            <div class="d-flex flex-wrap gap-1 mt-2">
+              <span class="badge bg-secondary bg-opacity-25 text-dark">Peter Parker ✕</span>
+              <span class="badge bg-secondary bg-opacity-25 text-dark">Steve Rogers ✕</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-muted text-uppercase">Rating</label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="ratingGeneral" checked>
+              <label class="form-check-label small" for="ratingGeneral">General Audiences</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="ratingTeen" checked>
+              <label class="form-check-label small" for="ratingTeen">Teen And Up</label>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label class="form-label small fw-bold text-muted text-uppercase">Status</label>
+            <select class="form-select form-select-sm bg-light border-0">
+              <option selected>Completed</option>
+              <option>Work in Progress</option>
+              <option>Any</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary-custom w-100 fw-bold shadow-sm">Apply Filters</button>
+        </div>
+      </nav>
+
+      <!-- Main Reading Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+            
+            <!-- Story Header -->
+            <div class="card shadow-sm border-0 mb-4 bg-white">
+              <div class="card-body p-4 p-md-5 text-center">
+                <div class="mb-3">
+                  <span class="badge bg-primary">Sci-Fi</span>
+                  <span class="badge bg-secondary">Marvel</span>
+                  <span class="badge bg-success">Completed</span>
+                </div>
+                <h1 class="display-5 fw-bold mb-3">Echoes of Andromeda</h1>
+                <p class="text-muted mb-4">By <a href="#" class="text-decoration-none fw-bold">SpaceWriter99</a></p>
+                
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
+                  <span class="badge bg-light text-dark border">Tony Stark</span>
+                  <span class="badge bg-light text-dark border">Peter Parker</span>
+                  <span class="badge bg-light text-dark border">Space Exploration</span>
+                  <span class="badge bg-light text-dark border">Angst with a Happy Ending</span>
+                </div>
+
+                <div class="story-stats d-flex justify-content-center flex-wrap gap-4 mb-4 small text-muted fw-medium border-top border-bottom py-3">
+                  <span>👁️ 45,201 Reads</span>
+                  <span>❤️ 2,340 Kudos</span>
+                  <span>💬 342 Comments</span>
+                  <span>📑 12 Chapters</span>
+                </div>
+
+                <p class="lead text-start mb-0">
+                  <strong>Summary:</strong> A continuation of the beloved series where the crew faces a new unknown threat from the deep cosmos. When communications go down, they have only each other to rely on.
+                </p>
+              </div>
+            </div>
+
+            <!-- Reading Interface -->
+            <div class="card shadow-sm border-0 mb-5 bg-white">
+              <div class="card-body p-4 p-md-5">
+                <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
+                  <h3 class="h4 mb-0">Chapter 1: The Silence</h3>
+                  <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Chapter 1 of 12
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item active" href="#">Chapter 1</a></li>
+                      <li><a class="dropdown-item" href="#">Chapter 2</a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="reading-content text-body">
+                  <p>The stars were always silent, but today, that silence felt heavy. Tony adjusted the monitors, the blue light reflecting off his tired eyes. It had been forty-eight hours since the last transmission from Earth.</p>
+                  <p>"Anything?" Peter asked, floating into the command module. His voice lacked its usual energetic bounce.</p>
+                  <p>"Nothing but static, kid," Tony replied, leaning back and rubbing his temples. "It's like someone threw a blanket over the entire comms array."</p>
+                  <p>The ship groaned around them, a subtle vibration that reminded them how fragile their metal bubble was in the vastness of the Andromeda galaxy. They were supposed to be mapping a new nebula, not playing hide and seek with the rest of humanity.</p>
+                  <p>Suddenly, the proximity alarm blared, a sharp, piercing sound that shattered the quiet. A massive shadow eclipsed the main viewing port.</p>
+                  <p>"Mr. Stark..." Peter whispered, staring out into the void. "I don't think we're alone anymore."</p>
+                </div>
+
+                <div class="d-flex justify-content-between mt-5 pt-4 border-top">
+                  <button class="btn btn-outline-secondary" disabled>← Previous Chapter</button>
+                  <button class="btn btn-primary-custom fw-bold px-4">Next Chapter →</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Kudos and Interaction -->
+            <div class="text-center mb-5">
+              <h4 class="mb-3">Did you enjoy this chapter?</h4>
+              <button class="btn btn-lg rounded-pill px-5 py-3 shadow-sm" style="background-color: #ffeff1; color: #d63384; border: 2px solid #d63384;">
+                ❤️ Leave Kudos
+              </button>
+              <p class="text-muted small mt-2">Join 2,340 others who left kudos!</p>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="card shadow-sm border-0 mb-5 bg-white">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="h4 mb-4">Comments (342)</h3>
+                
+                <!-- Comment Input -->
+                <div class="d-flex gap-3 mb-5">
+                  <img src="https://ui-avatars.com/api/?name=Guest&background=light" alt="Avatar" width="48" height="48" class="rounded-circle">
+                  <div class="flex-grow-1">
+                    <textarea class="form-control bg-light border-0 mb-2" rows="3" placeholder="Leave a comment..."></textarea>
+                    <div class="text-end">
+                      <button class="btn btn-primary-custom px-4 fw-bold">Post Comment</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment Thread 1 -->
+                <div class="d-flex gap-3 mb-4">
+                  <img src="https://ui-avatars.com/api/?name=Sophia&background=random" alt="Avatar" width="48" height="48" class="rounded-circle">
+                  <div>
+                    <div class="bg-light p-3 rounded">
+                      <div class="fw-bold mb-1">Sophia_Reads <span class="text-muted small fw-normal ms-2">2 hours ago</span></div>
+                      <p class="mb-0">Omg what a cliffhanger! I can't believe you ended the chapter right when the ship appeared. Is it Thanos? Is it someone new? I need chapter 2 right now!</p>
+                    </div>
+                    <div class="d-flex gap-3 mt-1 ms-2 small fw-bold">
+                      <a href="#" class="text-muted text-decoration-none hover-primary">Like (12)</a>
+                      <a href="#" class="text-muted text-decoration-none hover-primary">Reply</a>
+                    </div>
+                    
+                    <!-- Reply -->
+                    <div class="d-flex gap-3 mt-3">
+                      <img src="https://ui-avatars.com/api/?name=SpaceWriter&background=primary&color=fff" alt="Avatar" width="36" height="36" class="rounded-circle">
+                      <div>
+                        <div class="bg-primary bg-opacity-10 p-3 rounded border border-primary border-opacity-25">
+                          <div class="fw-bold mb-1">SpaceWriter99 <span class="badge bg-primary ms-1">Author</span> <span class="text-muted small fw-normal ms-2">1 hour ago</span></div>
+                          <p class="mb-0">Haha thank you! I promise the wait won't be long. Chapter 2 goes up on Friday!</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Comment Thread 2 -->
+                <div class="d-flex gap-3 mb-4">
+                  <img src="https://ui-avatars.com/api/?name=Alex&background=random" alt="Avatar" width="48" height="48" class="rounded-circle">
+                  <div>
+                    <div class="bg-light p-3 rounded">
+                      <div class="fw-bold mb-1">AlexFanboy <span class="text-muted small fw-normal ms-2">Yesterday</span></div>
+                      <p class="mb-0">The dynamic between Tony and Peter is written so perfectly here. It feels exactly like the movies.</p>
+                    </div>
+                    <div class="d-flex gap-3 mt-1 ms-2 small fw-bold">
+                      <a href="#" class="text-muted text-decoration-none hover-primary">Like (45)</a>
+                      <a href="#" class="text-muted text-decoration-none hover-primary">Reply</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center mt-4">
+                  <button class="btn btn-outline-secondary rounded-pill px-4">Load More Comments</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

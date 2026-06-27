@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FanFicHub | Browse Fandoms</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+        FanFicHub
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Explore
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+              <li><a class="dropdown-item" href="explore-stories.html">Browse Stories</a></li>
+              <li><a class="dropdown-item" href="fandoms.html">Browse Fandoms</a></li>
+              <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Community
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
+              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
+              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
+        </ul>
+        <div class="d-flex ms-3 gap-2 align-items-center">
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+          <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
+          <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <div class="bg-main py-5 border-bottom">
+    <div class="container text-center">
+      <h1 class="display-5 fw-bold">Browse by Fandom</h1>
+      <p class="lead text-muted">Find exactly the universes you want to read and write about.</p>
+    </div>
+  </div>
+
+  <!-- Fandoms Content -->
+  <div class="container py-5">
+    
+    <!-- Search Bar -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8">
+        <div class="input-group input-group-lg shadow-sm">
+          <input type="text" class="form-control border-0 px-4" placeholder="Search fandoms (e.g., Marvel, Naruto, Harry Potter)..." aria-label="Search fandoms">
+          <button class="btn btn-primary-custom px-4" type="button">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Headers & Grids -->
+    
+    <!-- Category 1 -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
+        <h3 class="fw-bold mb-0 me-3">Movies & TV Shows</h3>
+        <span class="badge bg-primary-custom rounded-pill">240 Fandoms</span>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🦸‍♂️</div>
+                <h5 class="fw-bold text-body mb-1">Marvel Universe</h5>
+                <p class="text-muted small mb-0">45k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🦇</div>
+                <h5 class="fw-bold text-body mb-1">DC Universe</h5>
+                <p class="text-muted small mb-0">28k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🚀</div>
+                <h5 class="fw-bold text-body mb-1">Star Wars</h5>
+                <p class="text-muted small mb-0">34k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">👽</div>
+                <h5 class="fw-bold text-body mb-1">Stranger Things</h5>
+                <p class="text-muted small mb-0">12k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 2 -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
+        <h3 class="fw-bold mb-0 me-3">Anime & Manga</h3>
+        <span class="badge bg-primary-custom rounded-pill">510 Fandoms</span>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🦊</div>
+                <h5 class="fw-bold text-body mb-1">Naruto</h5>
+                <p class="text-muted small mb-0">52k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🏴‍☠️</div>
+                <h5 class="fw-bold text-body mb-1">One Piece</h5>
+                <p class="text-muted small mb-0">38k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">⚔️</div>
+                <h5 class="fw-bold text-body mb-1">Bleach</h5>
+                <p class="text-muted small mb-0">21k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">💥</div>
+                <h5 class="fw-bold text-body mb-1">My Hero Academia</h5>
+                <p class="text-muted small mb-0">48k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Category 3 -->
+    <div class="mb-5">
+      <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
+        <h3 class="fw-bold mb-0 me-3">Books & Literature</h3>
+        <span class="badge bg-primary-custom rounded-pill">120 Fandoms</span>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">⚡</div>
+                <h5 class="fw-bold text-body mb-1">Harry Potter</h5>
+                <p class="text-muted small mb-0">95k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🏹</div>
+                <h5 class="fw-bold text-body mb-1">The Hunger Games</h5>
+                <p class="text-muted small mb-0">18k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">💍</div>
+                <h5 class="fw-bold text-body mb-1">Lord of the Rings</h5>
+                <p class="text-muted small mb-0">22k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- Fandom Card -->
+        <div class="col-md-3 col-6">
+          <a href="explore-stories.html" class="text-decoration-none">
+            <div class="card card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body">
+                <div class="fs-1 mb-3">🔱</div>
+                <h5 class="fw-bold text-body mb-1">Percy Jackson</h5>
+                <p class="text-muted small mb-0">29k Stories</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Button -->
+    <div class="text-center mt-5">
+      <button class="btn btn-outline-custom btn-lg px-5">Load More Fandoms</button>
+    </div>
+
+  </div>
+
+  <footer class="footer-custom mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand mb-3 justify-content-start" href="index.html">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+            FanFicHub
+          </a>
+          <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">Community News</a></li>
+            <li class="mb-2"><a href="contact.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Legal</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-title h6">Newsletter</h4>
+          <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
+          <form class="d-flex gap-2 needs-validation" novalidate>
+            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+            <button class="btn btn-primary-custom" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        &copy; 2026 FanFicHub. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
