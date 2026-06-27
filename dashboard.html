@@ -9,6 +9,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body class="bg-light">
 
@@ -77,49 +78,55 @@
 
       <!-- Main Content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-4 border-bottom">
-          <h1 class="h2 fw-bold">Writer Dashboard</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <button type="button" class="btn btn-primary-custom fw-bold shadow-sm">
-              + New Story
-            </button>
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-bottom-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover; margin-top: -1.5rem;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+          <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
+            <div>
+              <h1 class="h2 fw-bold mb-0">Writer Dashboard</h1>
+              <p class="text-light opacity-75 mb-0 small mt-1">Manage your stories, analytics, and interactions.</p>
+            </div>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <button type="button" class="btn btn-primary-custom fw-bold shadow-sm px-4">
+                + New Story
+              </button>
+            </div>
           </div>
         </div>
 
         <!-- Statistics Cards -->
         <div class="row g-3 mb-4">
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Total Stories</div>
               <div class="fs-3 fw-bold text-primary">18</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Followers</div>
               <div class="fs-3 fw-bold text-primary">4,520</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Total Views</div>
               <div class="fs-3 fw-bold text-success">238k</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Total Kudos</div>
               <div class="fs-3 fw-bold text-danger">16k</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Comments</div>
               <div class="fs-3 fw-bold text-info">8,500</div>
             </div>
           </div>
           <div class="col-6 col-md-4 col-xl-2">
-            <div class="card shadow-sm border-0 text-center h-100 py-3 bg-white">
+            <div class="card premium-hover shadow-sm border-0 text-center h-100 py-3 bg-white">
               <div class="text-muted small text-uppercase fw-bold mb-1">Bookmarks</div>
               <div class="fs-3 fw-bold text-warning">7,400</div>
             </div>
@@ -128,7 +135,7 @@
 
         <!-- Recent Stories List -->
         <h3 class="h4 mb-3">Recent Stories</h3>
-        <div class="card shadow-sm border-0 mb-4 bg-white">
+        <div class="card premium-hover shadow-sm border-0 mb-4 bg-white">
           <div class="table-responsive">
             <table class="table table-hover align-middle mb-0">
               <thead class="table-light text-muted small text-uppercase">

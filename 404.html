@@ -28,6 +28,7 @@
       font-weight: 700;
     }
   </style>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
 
@@ -80,20 +81,23 @@
     </div>
   </nav>
 
-  <div class="error-section">
-    <div class="container">
-      <h1>404</h1>
-      <h2 class="mb-4">Page Not Found</h2>
-      <p class="text-muted mb-5">The story you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-      <a href="index.html" class="btn btn-primary-custom">Return Home</a>
+  <div class="error-section text-center position-relative overflow-hidden py-5">
+    <div class="container position-relative z-1">
+      <div class="mb-4">
+        <img src="assets/images/404-bg.png" alt="404 Illustration" class="img-fluid rounded-4 shadow-lg mb-4" style="max-height: 400px; object-fit: cover; width: 100%; max-width: 800px; margin: 0 auto; display: block;">
+      </div>
+      <h1 class="display-1 fw-bold text-primary mb-3" style="color: var(--primary-color) !important;">404</h1>
+      <h2 class="mb-4 fw-semibold">Page Not Found</h2>
+      <p class="text-muted mb-5 lead mx-auto" style="max-width: 600px;">The story you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+      <a href="index.html" class="btn btn-primary-custom btn-lg px-5 shadow-sm rounded-pill transition-all hover-lift">Return Home</a>
     </div>
   </div>
 
-  <footer class="footer-custom">
+  <footer class="footer-custom text-center">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <a class="navbar-brand mb-3 justify-content-start" href="index.html">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
+          <a class="navbar-brand mb-3 justify-content-center" href="index.html">
             <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
             FanFicHub
           </a>
@@ -117,8 +121,8 @@
         <div class="col-lg-4 col-md-6">
           <h4 class="footer-title h6">Newsletter</h4>
           <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
-          <form class="d-flex gap-2 needs-validation" novalidate>
-            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+          <form class="d-flex flex-column align-items-center gap-3 needs-validation" novalidate>
+            <input type="email" class="form-control form-control-custom text-center" placeholder="Your email address" required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>
         </div>
