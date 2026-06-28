@@ -17,6 +17,7 @@
     }
   </style>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-light">
 
@@ -24,7 +25,7 @@
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+        <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,20 +50,20 @@
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Community
             </a>
             <ul class="dropdown-menu" aria-labelledby="communityDropdown">
               <li><a class="dropdown-item" href="blog.html">Community News</a></li>
-              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
+              <li><a class="dropdown-item active" href="story-preview.html">Featured Story</a></li>
             </ul>
           </li>
           
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -137,7 +138,7 @@
                   <span class="badge bg-secondary">Marvel</span>
                   <span class="badge bg-success">Completed</span>
                 </div>
-                <h1 class="display-5 fw-bold mb-3">Echoes of Andromeda</h1>
+                <h1 class="display-5 fw-bold mb-3"><span class="gradient-text">Echoes of Andromeda</span></h1>
                 <p class="text-muted mb-4">By <a href="#" class="text-decoration-none fw-bold">SpaceWriter99</a></p>
                 
                 <div class="d-flex justify-content-center flex-wrap gap-2 mb-4">
@@ -148,10 +149,10 @@
                 </div>
 
                 <div class="story-stats d-flex justify-content-center flex-wrap gap-4 mb-4 small text-muted fw-medium border-top border-bottom py-3">
-                  <span>👁️ 45,201 Reads</span>
-                  <span>❤️ 2,340 Kudos</span>
-                  <span>💬 342 Comments</span>
-                  <span>📑 12 Chapters</span>
+                  <span><i class="ph-fill ph-eye align-middle me-1"></i> 45,201 Reads</span>
+                  <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 2,340 Kudos</span>
+                  <span><i class="ph-fill ph-chat-circle-text align-middle me-1 text-secondary"></i> 342 Comments</span>
+                  <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 12 Chapters</span>
                 </div>
 
                 <p class="lead text-start mb-0">
@@ -164,13 +165,13 @@
             <div class="card premium-hover shadow-sm border-0 mb-5 bg-white">
               <div class="card-body p-4 p-md-5">
                 <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
-                  <h3 class="h4 mb-0">Chapter 1: The Silence</h3>
+                  <h3 class="h4 mb-0"><span class="gradient-text">Chapter 1: The Silence</span></h3>
                   <div class="dropdown">
                     <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
                       Chapter 1 of 12
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item active" href="#">Chapter 1</a></li>
+                      <li><a class="dropdown-item" href="#">Chapter 1</a></li>
                       <li><a class="dropdown-item" href="#">Chapter 2</a></li>
                     </ul>
                   </div>
@@ -196,7 +197,7 @@
             <div class="text-center mb-5">
               <h4 class="mb-3">Did you enjoy this chapter?</h4>
               <button class="btn btn-lg rounded-pill px-5 py-3 shadow-sm" style="background-color: #ffeff1; color: #d63384; border: 2px solid #d63384;">
-                ❤️ Leave Kudos
+                <i class="ph-fill ph-heart text-danger align-middle me-1"></i> Leave Kudos
               </button>
               <p class="text-muted small mt-2">Join 2,340 others who left kudos!</p>
             </div>

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
@@ -22,10 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2">
-          <path
-            d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-        </svg>
+        <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
@@ -35,7 +33,7 @@
 
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
 
@@ -66,8 +64,8 @@
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
           <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0"
-            aria-label="Toggle Theme">🌓</button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+            aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -76,17 +74,19 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section position-relative" style="background: url('assets/images/hero-bg.png') no-repeat center center; background-size: cover; padding: 10rem 0;">
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
-    <div class="container position-relative z-1">
+  <section class="hero-section position-relative d-flex align-items-center" style="background: url('assets/images/hero-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+    <div class="container position-relative z-1 py-2">
       <div class="row justify-content-center">
-        <div class="col-lg-8 text-center text-white">
-          <h1 class="display-3 fw-bold mb-4 text-white">Write Stories.<br>Expand Universes.<br>Share Your Imagination.</h1>
-          <p class="lead mb-5 text-light opacity-75">Publish fan fiction inspired by your favorite worlds, build an audience, receive
-            feedback, and join thousands of passionate writers.</p>
-          <div class="d-flex justify-content-center gap-3">
-            <a href="dashboard.html" class="btn btn-primary-custom btn-lg px-4 py-2">Start Writing</a>
-            <a href="#featured" class="btn btn-secondary-custom btn-lg px-4 py-2">Explore Stories</a>
+        <div class="col-lg-10 text-center">
+          <div class="p-5 shadow-lg mx-auto" style="max-width: 900px;">
+            <h1 class="display-3 fw-bold mb-4 text-white">Write Stories.<br><span class="gradient-text">Expand Universes.</span><br>Share Your Imagination.</h1>
+            <p class="lead mb-5 text-light opacity-75 mx-auto" style="max-width: 700px;">Publish fan fiction inspired by your favorite worlds, build an audience, receive
+              feedback, and join thousands of passionate writers.</p>
+            <div class="d-flex justify-content-center gap-3">
+              <a href="dashboard.html" class="btn btn-primary-custom btn-lg px-5 py-3 shadow hover-lift premium-hover rounded-pill">Start Writing</a>
+              <a href="#featured" class="btn btn-outline-light btn-lg px-5 py-3 hover-lift rounded-pill">Explore Stories</a>
+            </div>
           </div>
         </div>
       </div>
@@ -115,9 +115,9 @@
               <p class="story-card-text text-muted flex-grow-1">A continuation of the beloved series where the crew
                 faces a new unknown threat from the deep cosmos.</p>
               <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
-                <span>👁️ 45K Reads</span>
-                <span>❤️ 2.3K Kudos</span>
-                <span>📑 12 Ch.</span>
+                <span><i class="ph-fill ph-eye align-middle me-1"></i> 45K Reads</span>
+                <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 2.3K Kudos</span>
+                <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 12 Ch.</span>
               </div>
               <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
                 <span>By SpaceWriter99</span>
@@ -140,9 +140,9 @@
               <p class="story-card-text text-muted flex-grow-1">In a world where magic is outlawed, a young wizard must
                 hide his powers to survive.</p>
               <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
-                <span>👁️ 32K Reads</span>
-                <span>❤️ 1.8K Kudos</span>
-                <span>📑 8 Ch.</span>
+                <span><i class="ph-fill ph-eye align-middle me-1"></i> 32K Reads</span>
+                <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 1.8K Kudos</span>
+                <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 8 Ch.</span>
               </div>
               <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
                 <span>By MagicScribe</span>
@@ -165,9 +165,9 @@
               <p class="story-card-text text-muted flex-grow-1">Two strangers meet during a storm, and their lives
                 intertwine in ways they never expected.</p>
               <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
-                <span>👁️ 89K Reads</span>
-                <span>❤️ 5.4K Kudos</span>
-                <span>📑 24 Ch.</span>
+                <span><i class="ph-fill ph-eye align-middle me-1"></i> 89K Reads</span>
+                <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 5.4K Kudos</span>
+                <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 24 Ch.</span>
               </div>
               <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
                 <span>By HeartFelt</span>
@@ -182,27 +182,27 @@
 
   <!-- Why Writers Love It -->
   <section class="py-5 bg-light" style="background-color: var(--bg-card) !important;">
-    <div class="container">
-      <h2 class="text-center mb-5">Why Writers Love Our Community</h2>
+    <div class="container py-4">
+      <h2 class="text-center mb-5 fw-bold"><span class="gradient-text">Why Writers Love Our Community</span></h2>
       <div class="row g-4 text-center">
         <div class="col-md-4">
-          <div class="p-4 shadow-sm rounded h-100 bg-white dark-bg-dark border">
-            <div class="fs-1 mb-3">📝</div>
-            <h3 class="h4">Unlimited Story Publishing</h3>
+          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+            <div class="fs-1 mb-3"><i class="ph-fill ph-pencil-simple-line"></i></div>
+            <h3 class="h4 fw-bold">Unlimited Story Publishing</h3>
             <p class="text-muted">Publish as many stories as you like and update chapters anytime.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-4 shadow-sm rounded h-100 bg-white dark-bg-dark border">
-            <div class="fs-1 mb-3">❤️</div>
-            <h3 class="h4">Reader Kudos & Comments</h3>
+          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+            <div class="fs-1 mb-3"><i class="ph-fill ph-heart text-danger align-middle me-1"></i></div>
+            <h3 class="h4 fw-bold">Reader Kudos & Comments</h3>
             <p class="text-muted">Receive instant appreciation and interact with your growing audience.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-4 shadow-sm rounded h-100 bg-white dark-bg-dark border">
-            <div class="fs-1 mb-3">📊</div>
-            <h3 class="h4">Story Analytics</h3>
+          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+            <div class="fs-1 mb-3"><i class="ph-fill ph-chart-bar"></i></div>
+            <h3 class="h4 fw-bold">Story Analytics</h3>
             <p class="text-muted">Track readers, engagement, bookmarks, and kudos from your dashboard.</p>
           </div>
         </div>
@@ -298,11 +298,8 @@
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
           <a class="navbar-brand mb-3 justify-content-start" href="index.html">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2">
-              <path
-                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
-            </svg>
-            FanFicHub
+            <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
+        FanFicHub
           </a>
           <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
         </div>

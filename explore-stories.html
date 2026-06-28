@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
 
@@ -16,7 +17,7 @@
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">
-        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+        <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,11 +31,11 @@
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Explore
             </a>
             <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
-              <li><a class="dropdown-item" href="explore-stories.html">Browse Stories</a></li>
+              <li><a class="dropdown-item active" href="explore-stories.html">Browse Stories</a></li>
               <li><a class="dropdown-item" href="fandoms.html">Browse Fandoms</a></li>
               <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
             </ul>
@@ -53,8 +54,8 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL">⇄</button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -63,11 +64,13 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="position-relative py-5 text-center text-white" style="background: url('assets/images/library-bg.png') no-repeat center center; background-size: cover; padding: 6rem 0;">
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+  <section class="position-relative py-5 d-flex align-items-center text-center text-white" style="background: url('assets/images/library-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
-      <h1 class="display-4 fw-bold text-white mb-3">Explore Stories</h1>
-      <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Dive into thousands of fan fictions across your favorite universes.</p>
+      <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
+        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text">Explore Stories</span></h1>
+        <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Dive into thousands of fan fictions across your favorite universes.</p>
+      </div>
     </div>
   </section>
 
@@ -137,8 +140,8 @@
                     <p class="card-text text-muted small mb-2">By @StarkFan99</p>
                     <p class="card-text small mb-3 flex-grow-1">What if Tony Stark had survived Endgame? A new threat emerges from the quantum realm...</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1zm3-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1zm-3-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1z"/></svg> 12 Ch</span>
-                      <span class="small text-danger"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg> 1.2k</span>
+                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
                     </div>
                   </div>
                 </div>
@@ -159,8 +162,8 @@
                     <p class="card-text text-muted small mb-2">By @MagicWriter</p>
                     <p class="card-text small mb-3 flex-grow-1">A forgotten prophecy resurfaces during Harry's fifth year, changing everything.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1zm3-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1zm-3-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1z"/></svg> 45 Ch</span>
-                      <span class="small text-danger"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg> 3.4k</span>
+                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 45 Ch</span>
+                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 3.4k</span>
                     </div>
                   </div>
                 </div>
@@ -181,8 +184,8 @@
                     <p class="card-text text-muted small mb-2">By @NinjaWay</p>
                     <p class="card-text small mb-3 flex-grow-1">Naruto discovers a hidden scroll that reveals the true origin of chakra.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1zm3-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1zm-3-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1z"/></svg> 22 Ch</span>
-                      <span class="small text-danger"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg> 2.1k</span>
+                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 22 Ch</span>
+                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 2.1k</span>
                     </div>
                   </div>
                 </div>
@@ -203,8 +206,8 @@
                     <p class="card-text text-muted small mb-2">By @BatFan</p>
                     <p class="card-text small mb-3 flex-grow-1">A new vigilante stalks the streets of Gotham, challenging the Dark Knight's rule.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1zm3-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1zm-3-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5v-1z"/></svg> 8 Ch</span>
-                      <span class="small text-danger"><svg width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/></svg> 850</span>
+                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 8 Ch</span>
+                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 850</span>
                     </div>
                   </div>
                 </div>
@@ -232,7 +235,7 @@
       <div class="row g-4 justify-content-center">
         <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center">
           <a class="navbar-brand mb-3 justify-content-center" href="index.html">
-            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="me-2"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/></svg>
+            <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
             FanFicHub
           </a>
           <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>

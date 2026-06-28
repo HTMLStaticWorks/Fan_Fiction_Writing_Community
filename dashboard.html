@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-light">
 
@@ -17,10 +18,11 @@
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom shadow-sm">
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold" href="index.html">
+        <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
       <div class="d-flex ms-auto gap-3 align-items-center">
-        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme">🌓</button>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
         <div class="dropdown">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://ui-avatars.com/api/?name=Writer&background=random" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -44,18 +46,18 @@
         <div class="position-sticky sidebar-sticky">
           <ul class="nav flex-column gap-2 px-2">
             <li class="nav-item">
-              <a class="nav-link active fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="#">
-                📊 Dashboard
+              <a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="#">
+                <i class="ph-fill ph-chart-bar"></i> Dashboard
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-body hover-lift rounded" href="#">
-                📝 My Stories
+                <i class="ph-fill ph-pencil-simple-line"></i> My Stories
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-body hover-lift rounded" href="#">
-                📑 Reading Lists
+                <i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> Reading Lists
               </a>
             </li>
             <li class="nav-item">
@@ -82,7 +84,7 @@
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
           <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
             <div>
-              <h1 class="h2 fw-bold mb-0">Writer Dashboard</h1>
+              <h1 class="h2 fw-bold mb-0"><span class="gradient-text">Writer Dashboard</span></h1>
               <p class="text-light opacity-75 mb-0 small mt-1">Manage your stories, analytics, and interactions.</p>
             </div>
             <div class="btn-toolbar mb-2 mb-md-0">
@@ -134,7 +136,7 @@
         </div>
 
         <!-- Recent Stories List -->
-        <h3 class="h4 mb-3">Recent Stories</h3>
+        <h3 class="h4 mb-3 fw-bold"><span class="gradient-text">Recent Stories</span></h3>
         <div class="card premium-hover shadow-sm border-0 mb-4 bg-white">
           <div class="table-responsive">
             <table class="table table-hover align-middle mb-0">
@@ -142,7 +144,7 @@
                 <tr>
                   <th class="ps-4">Story Title</th>
                   <th>Status</th>
-                  <th>Stats (👁️/❤️)</th>
+                  <th>Stats (<i class="ph-fill ph-eye align-middle me-1"></i>/<i class="ph-fill ph-heart text-danger align-middle me-1"></i>)</th>
                   <th>Last Updated</th>
                   <th class="text-end pe-4">Actions</th>
                 </tr>
