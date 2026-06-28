@@ -29,3 +29,12 @@
   background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
   background-size: 200% 100%;
 }
+
+[data-theme="dark"] .bg-light,
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-main) !important;
+}
+
+[data-theme="dark"] .team-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
+}

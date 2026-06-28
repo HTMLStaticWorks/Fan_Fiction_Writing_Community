@@ -69,21 +69,33 @@ h6 {
 h1 {
   font-size: clamp(4.5rem, 6vw, 6rem);
 }
-h1, h1.fw-bold, h1.fw-semibold, h1.fw-bolder {
+
+h1,
+h1.fw-bold,
+h1.fw-semibold,
+h1.fw-bolder {
   font-weight: 580 !important;
 }
 
 h2 {
   font-size: clamp(3rem, 5vw, 4.5rem);
 }
-h2, h2.fw-bold, h2.fw-semibold, h2.fw-bolder {
+
+h2,
+h2.fw-bold,
+h2.fw-semibold,
+h2.fw-bolder {
   font-weight: 540 !important;
 }
 
 h3 {
   font-size: clamp(2rem, 4vw, 3rem);
 }
-h3, h3.fw-bold, h3.fw-semibold, h3.fw-bolder {
+
+h3,
+h3.fw-bold,
+h3.fw-semibold,
+h3.fw-bolder {
   font-weight: 520 !important;
 }
 
@@ -222,6 +234,7 @@ a:hover {
 
 /* Navigation */
 .navbar-custom {
+  z-index: 1030 !important;
   background-color: var(--bg-card);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: background-color var(--transition-fast);
@@ -295,7 +308,6 @@ a:hover {
   background-color: var(--bg-card);
   border-top: 1px solid var(--border-color);
   padding: 4rem 0 2rem;
-  margin-top: 4rem;
 }
 
 .footer-custom .footer-title {
@@ -361,7 +373,7 @@ a:hover {
 .hero-section h2,
 .hero-section h3,
 .hero-section p {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(155, 155, 155, 0.8), 0 4px 12px rgba(217, 217, 217, 0.5);
 }
 
 .hero-section h1 {
@@ -389,6 +401,14 @@ a:hover {
   background-color: var(--bg-main);
   border: 1px solid var(--border-color);
   color: var(--text-main);
+  padding: 0.75rem 1.25rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  height: auto;
+}
+
+.form-control-custom::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.8;
 }
 
 .form-control-custom:focus {
@@ -417,6 +437,15 @@ a:hover {
 }
 
 /* Custom Utilities */
+.team-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%);
+  pointer-events: none;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
 .hover-lift {
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -463,6 +492,7 @@ a:hover {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8)) drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.6));
+  text-shadow: none !important;
 }
 
 .gradient-bg {

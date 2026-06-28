@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -20,18 +22,20 @@
         <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="exploreDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Explore
             </a>
             <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
@@ -40,22 +44,16 @@
               <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
             </ul>
           </li>
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Community
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
-              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
-              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
-            </ul>
-          </li>
-          
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Community</a></li>
+
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i
+              class="ph-fill ph-moon-stars text-secondary"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i
+              class="ph-bold ph-arrows-left-right text-secondary"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -64,12 +62,14 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="position-relative py-5 d-flex align-items-center text-center text-white" style="background: url('assets/images/library-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
+  <section class="position-relative py-5 d-flex align-items-center text-center text-white"
+    style="background: url('assets/images/library-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
       <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
         <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text">Explore Stories</span></h1>
-        <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Dive into thousands of fan fictions across your favorite universes.</p>
+        <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Dive into thousands of fan fictions
+          across your favorite universes.</p>
       </div>
     </div>
   </section>
@@ -79,11 +79,19 @@
     <div class="row g-4">
       <!-- Filters Sidebar -->
       <div class="col-lg-3">
-        <div class="card premium-hover card-custom border-0 shadow-sm p-4 sticky-top" style="top: 100px;">
+        <button class="btn btn-primary-custom d-lg-none w-100 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+          <i class="ph-bold ph-funnel me-2"></i> Show Filters
+        </button>
+        <div class="collapse d-lg-block" id="filterCollapse">
+        <div class="card premium-hover card-custom border-0 shadow-sm p-4 sticky-top"
+          style="top: 120px; z-index: 1010;">
           <h5 class="fw-bold mb-4">Filters</h5>
-          
+
           <div class="mb-4">
-            <h6 class="fw-bold text-muted mb-3">Fandoms</h6>
+            <div class="d-flex justify-content-between mb-3">
+              <button type="button" id="selectAllBtn" class="btn btn-sm btn-outline-primary">Select All</button>
+              <button type="button" id="clearAllBtn" class="btn btn-sm btn-outline-secondary">Clear</button>
+            </div>
             <div class="form-check mb-2">
               <input class="form-check-input" type="checkbox" id="fandomMarvel" checked>
               <label class="form-check-label" for="fandomMarvel">Marvel</label>
@@ -96,38 +104,50 @@
               <input class="form-check-input" type="checkbox" id="fandomNaruto">
               <label class="form-check-label" for="fandomNaruto">Naruto</label>
             </div>
-          </div>
-
-          <div class="mb-4">
-            <h6 class="fw-bold text-muted mb-3">Genres</h6>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="genreAction" checked>
-              <label class="form-check-label" for="genreAction">Action</label>
+              <input class="form-check-input" type="checkbox" id="fandomOnePiece">
+              <label class="form-check-label" for="fandomOnePiece">One Piece</label>
             </div>
             <div class="form-check mb-2">
-              <input class="form-check-input" type="checkbox" id="genreRomance">
-              <label class="form-check-label" for="genreRomance">Romance</label>
+              <input class="form-check-input" type="checkbox" id="fandomStarWars">
+              <label class="form-check-label" for="fandomStarWars">Star Wars</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="fandomLOTR">
+              <label class="form-check-label" for="fandomLOTR">Lord of the Rings</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="fandomDC">
+              <label class="form-check-label" for="fandomDC">DC Comics</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="fandomST">
+              <label class="form-check-label" for="fandomST">Stranger Things</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="fandomPJ">
+              <label class="form-check-label" for="fandomPJ">Percy Jackson</label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="checkbox" id="fandomMHA">
+              <label class="form-check-label" for="fandomMHA">My Hero Academia</label>
             </div>
           </div>
 
-          <button class="btn btn-primary-custom w-100">Apply Filters</button>
+          <button id="applyFiltersBtn" class="btn btn-primary-custom w-100">Apply Filters</button>
         </div>
       </div>
+        </div>
 
       <!-- Main Stories Grid -->
       <div class="col-lg-9">
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <p class="mb-0 text-muted">Showing <strong>245</strong> results</p>
-          <select class="form-select w-auto form-control-custom">
-            <option>Most Popular</option>
-            <option>Recently Updated</option>
-            <option>Newest</option>
-          </select>
+          <p class="mb-0 text-muted">Showing <strong id="resultsCount">20</strong> results</p>
         </div>
 
-        <div class="row g-4">
-          <!-- Story Card 1 -->
-          <div class="col-md-6">
+        <div class="row g-5" id="storyGrid">
+
+          <div class="col-md-6 story-item" data-fandom="marvel">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
               <div class="row g-0 h-100">
                 <div class="col-4">
@@ -136,20 +156,23 @@
                 <div class="col-8">
                   <div class="card-body d-flex flex-column h-100">
                     <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Marvel</span>
-                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html" class="text-decoration-none text-reset">The Iron Heart</a></h5>
-                    <p class="card-text text-muted small mb-2">By @StarkFan99</p>
-                    <p class="card-text small mb-3 flex-grow-1">What if Tony Stark had survived Endgame? A new threat emerges from the quantum realm...</p>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Iron Heart</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_marvel_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">What if Tony Stark had survived Endgame? A new threat
+                      emerges from the quantum realm...</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
-                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Story Card 2 -->
-          <div class="col-md-6">
+          <div class="col-md-6 story-item" data-fandom="naruto">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
               <div class="row g-0 h-100">
                 <div class="col-4">
@@ -157,43 +180,24 @@
                 </div>
                 <div class="col-8">
                   <div class="card-body d-flex flex-column h-100">
-                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Harry Potter</span>
-                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html" class="text-decoration-none text-reset">Shadows of Hogwarts</a></h5>
-                    <p class="card-text text-muted small mb-2">By @MagicWriter</p>
-                    <p class="card-text small mb-3 flex-grow-1">A forgotten prophecy resurfaces during Harry's fifth year, changing everything.</p>
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Naruto</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Last Shinobi</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_naruto_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">Naruto discovers a hidden scroll that reveals the true
+                      origin of chakra.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 45 Ch</span>
-                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 3.4k</span>
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Story Card 3 -->
-          <div class="col-md-6">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
-              <div class="row g-0 h-100">
-                <div class="col-4">
-                  <img src="assets/images/romance.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
-                </div>
-                <div class="col-8">
-                  <div class="card-body d-flex flex-column h-100">
-                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Anime</span>
-                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html" class="text-decoration-none text-reset">The Last Shinobi</a></h5>
-                    <p class="card-text text-muted small mb-2">By @NinjaWay</p>
-                    <p class="card-text small mb-3 flex-grow-1">Naruto discovers a hidden scroll that reveals the true origin of chakra.</p>
-                    <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 22 Ch</span>
-                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 2.1k</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Story Card 4 -->
-          <div class="col-md-6">
+          <div class="col-md-6 story-item" data-fandom="starwars">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
               <div class="row g-0 h-100">
                 <div class="col-4">
@@ -201,13 +205,452 @@
                 </div>
                 <div class="col-8">
                   <div class="card-body d-flex flex-column h-100">
-                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">DC Comics</span>
-                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html" class="text-decoration-none text-reset">Gotham Nights</a></h5>
-                    <p class="card-text text-muted small mb-2">By @BatFan</p>
-                    <p class="card-text small mb-3 flex-grow-1">A new vigilante stalks the streets of Gotham, challenging the Dark Knight's rule.</p>
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Star Wars</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Rise of the Sith</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_starwars_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">A rogue Jedi uncovers a plot that could destroy the
+                      Republic from within.</p>
                     <div class="d-flex justify-content-between align-items-center mt-auto">
-                      <span class="small text-muted"><i class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 8 Ch</span>
-                      <span class="small text-danger"><i class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 850</span>
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="dc">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">DC Comics</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Gotham Nights</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_dc_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">A new vigilante stalks the streets of Gotham,
+                      challenging the Dark Knight's rule.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="pj">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Percy
+                      Jackson</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Son of Poseidon</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_pj_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">Percy must retrieve a stolen artifact to prevent a war
+                      among the gods.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="hp">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Harry
+                      Potter</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Shadows of Hogwarts</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_hp_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">A forgotten prophecy resurfaces during Harry's fifth
+                      year, changing everything.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="onepiece">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">One Piece</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">King of the Pirates</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_onepiece_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">A new adventure awaits as the crew discovers a
+                      mysterious island.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="lotr">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Lord of the
+                      Rings</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Shadows of Mordor</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_lotr_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">An untold tale of the Rangers of the North before the
+                      War of the Ring.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="st">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Stranger
+                      Things</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Upside Down</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_st_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">The party must return to the alternate dimension to
+                      rescue a lost friend.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="mha">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">My Hero
+                      Academia</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Plus Ultra</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_mha_1</p>
+                    <p class="card-text small mb-3 flex-grow-1">Class 1-A faces their toughest villain yet during a
+                      training exercise.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="marvel">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Marvel</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Spider-Man: Endless Webs</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_marvel_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Peter Parker discovers a multiverse portal in Queens.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="naruto">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Naruto</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Shadows of the Leaf</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_naruto_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Sasuke's journey of redemption leads him to a forgotten
+                      Otsutsuki ruin.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="starwars">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Star Wars</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Mandalorian's Honor</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_starwars_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">A bounty hunter finds themselves protecting a
+                      force-sensitive child.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="dc">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">DC Comics</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Son of Krypton</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_dc_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Clark Kent must balance his life in Metropolis with a
+                      threat from the stars.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="pj">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Percy
+                      Jackson</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Camp Half-Blood Defense</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_pj_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">A new camp counselor brings trouble for the demigods.
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="hp">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Harry
+                      Potter</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Last Auror</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_hp_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Years after the war, a new dark wizard begins gathering
+                      followers.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="onepiece">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">One Piece</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Lost Poneglyph</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_onepiece_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Robin uncovers a secret that shakes the foundation of
+                      the World Government.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="lotr">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Lord of the
+                      Rings</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Elven Blade</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_lotr_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">A lost sword from the First Age is found, bringing hope
+                      to the free peoples.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="st">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/scifi.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">Stranger
+                      Things</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">Hawkins Lab Secrets</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_st_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Eleven uncovers documents revealing the true purpose of
+                      Dr. Brenner's experiments.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 story-item" data-fandom="mha">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+              <div class="row g-0 h-100">
+                <div class="col-4">
+                  <img src="assets/images/fantasy.png" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
+                </div>
+                <div class="col-8">
+                  <div class="card-body d-flex flex-column h-100">
+                    <span class="badge badge-custom bg-opacity-10 text-primary mb-2 align-self-start">My Hero
+                      Academia</span>
+                    <h5 class="card-title fw-bold mb-1"><a href="story-preview.html"
+                        class="text-decoration-none text-reset">The Hero Killer's Legacy</a></h5>
+                    <p class="card-text text-muted small mb-2">By @Author_mha_2</p>
+                    <p class="card-text small mb-3 flex-grow-1">Stain's ideology inspires a new generation of dangerous
+                      vigilantes.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-auto">
+                      <span class="small text-muted"><i
+                          class="ph-fill ph-bookmarks me-1 align-text-bottom text-primary"></i> 12 Ch</span>
+                      <span class="small text-danger"><i
+                          class="ph-fill ph-heart me-1 align-text-bottom text-danger"></i> 1.2k</span>
                     </div>
                   </div>
                 </div>
@@ -215,10 +658,10 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Pagination -->
         <nav class="mt-5">
-          <ul class="pagination justify-content-center">
+          <ul class="pagination justify-content-center" id="paginationControls">
             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
             <li class="page-item active"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -244,7 +687,7 @@
           <h4 class="footer-title h6">Quick Links</h4>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="about.html">About Us</a></li>
-            <li class="mb-2"><a href="blog.html">Community News</a></li>
+            <li class="mb-2"><a href="blog.html">Community</a></li>
             <li class="mb-2"><a href="contact.html">Support</a></li>
           </ul>
         </div>
@@ -259,7 +702,8 @@
           <h4 class="footer-title h6">Newsletter</h4>
           <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
           <form class="d-flex flex-column align-items-center gap-3 needs-validation" novalidate>
-            <input type="email" class="form-control form-control-custom text-center" placeholder="Your email address" required>
+            <input type="email" class="form-control form-control-custom text-center" placeholder="Your email address"
+              required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>
         </div>
@@ -274,5 +718,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/explore.js"></script>
 </body>
+
 </html>

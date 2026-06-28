@@ -41,15 +41,7 @@
             </ul>
           </li>
           
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Community
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
-              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
-              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Community</a></li>
           
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
@@ -76,58 +68,21 @@
 
   <!-- Authors Content -->
   <div class="container py-5">
-    <div class="row g-4">
-      <!-- Search & Filters -->
-      <div class="col-12 mb-4">
-        <div class="card premium-hover card-custom border-0 shadow-sm p-4">
-          <div class="row g-3 align-items-center">
-            <div class="col-md-5">
-              <input type="text" class="form-control form-control-custom" placeholder="Search authors by username...">
-            </div>
-            <div class="col-md-4">
-              <select class="form-select form-control-custom">
-                <option>All Genres</option>
-                <option>Fantasy</option>
-                <option>Sci-Fi</option>
-                <option>Romance</option>
-                <option>Action</option>
-              </select>
-            </div>
-            <div class="col-md-3">
-              <button class="btn btn-primary-custom w-100">Search</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Main Authors Grid -->
-      <div class="col-12">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <p class="mb-0 text-muted">Showing <strong>Trending Authors</strong></p>
-          <select class="form-select w-auto form-control-custom">
-            <option>Trending</option>
-            <option>Most Followers</option>
-            <option>Most Stories</option>
-            <option>Newest</option>
-          </select>
-        </div>
-
-        <div class="row g-4">
-          <!-- Author Card 1 -->
-          <div class="col-md-4">
+    <div class="row g-4" id="authorsGrid">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=47" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">StarkFan99</h5>
-                <p class="text-muted small mb-3">@starkfan99</p>
-                <p class="small px-3 mb-4 flex-grow-1">Marvel enthusiast writing mostly about Tony Stark and Peter Parker dynamics. Always open to prompts!</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Eiichiro Oda</h5>
+                <p class="text-muted small mb-3">@oda_sensei</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of One Piece. The master of epic world-building and storytelling.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">12</h6>
+                    <h6 class="fw-bold mb-0">1</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">8.4k</h6>
+                    <h6 class="fw-bold mb-0">99.9k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -135,22 +90,20 @@
               </div>
             </div>
           </div>
-          
-          <!-- Author Card 2 -->
-          <div class="col-md-4">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=32" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">MagicWriter</h5>
-                <p class="text-muted small mb-3">@magicwriter</p>
-                <p class="small px-3 mb-4 flex-grow-1">Hogwarts Alumni. Slytherin. Creating dark fantasy stories and alternative universe HP fics.</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Masashi Kishimoto</h5>
+                <p class="text-muted small mb-3">@kishimoto</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of Naruto. Known for deep character arcs and incredible ninja battles.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">24</h6>
+                    <h6 class="fw-bold mb-0">2</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">15.2k</h6>
+                    <h6 class="fw-bold mb-0">85.4k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -158,22 +111,20 @@
               </div>
             </div>
           </div>
-          
-          <!-- Author Card 3 -->
-          <div class="col-md-4">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=12" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">NinjaWay</h5>
-                <p class="text-muted small mb-3">@ninjaway</p>
-                <p class="small px-3 mb-4 flex-grow-1">Anime fan writing epic battles and deep character studies for Naruto and Bleach.</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Stan Lee</h5>
+                <p class="text-muted small mb-3">@stan_the_man</p>
+                <p class="small px-3 mb-4 flex-grow-1">Legendary comic book writer and co-creator of the Marvel Universe.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">8</h6>
+                    <h6 class="fw-bold mb-0">50</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">5.1k</h6>
+                    <h6 class="fw-bold mb-0">150k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -181,22 +132,125 @@
               </div>
             </div>
           </div>
-          
-          <!-- Author Card 4 -->
-          <div class="col-md-4">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=59" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">BatFan</h5>
-                <p class="text-muted small mb-3">@batfan_dc</p>
-                <p class="small px-3 mb-4 flex-grow-1">Gotham is my playground. Writing noir and mystery fanfics in the DC Universe.</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Akira Toriyama</h5>
+                <p class="text-muted small mb-3">@toriyama</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of Dragon Ball. The godfather of modern shonen manga.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">3</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">92.1k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">J.K. Rowling</h5>
+                <p class="text-muted small mb-3">@jk_rowling</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of the Harry Potter universe. Known for modern fantasy and compelling world-building.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">7</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">50.1k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Stephen King</h5>
+                <p class="text-muted small mb-3">@stephen_king</p>
+                <p class="small px-3 mb-4 flex-grow-1">Master of Horror. Prolific writer of suspense, supernatural fiction, and thrillers.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">64</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">45.2k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">J.R.R. Tolkien</h5>
+                <p class="text-muted small mb-3">@jrr_tolkien</p>
+                <p class="small px-3 mb-4 flex-grow-1">The father of high fantasy. Creator of Middle-earth, The Hobbit, and The Lord of the Rings.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">4</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">60.5k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">George R.R. Martin</h5>
+                <p class="text-muted small mb-3">@grrmartin</p>
+                <p class="small px-3 mb-4 flex-grow-1">Author of A Song of Ice and Fire. Master of complex political fantasy.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">5</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">38.9k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Rick Riordan</h5>
+                <p class="text-muted small mb-3">@uncle_rick</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of the Percy Jackson series. Blending mythology with modern-day adventures.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
                     <h6 class="fw-bold mb-0">15</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">10.8k</h6>
+                    <h6 class="fw-bold mb-0">42.7k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -204,22 +258,20 @@
               </div>
             </div>
           </div>
-          
-          <!-- Author Card 5 -->
-          <div class="col-md-4">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=5" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">SpaceWriter99</h5>
-                <p class="text-muted small mb-3">@spacewriter99</p>
-                <p class="small px-3 mb-4 flex-grow-1">Sci-Fi lover. Expanding the Star Wars and Mass Effect universes with original characters.</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Suzanne Collins</h5>
+                <p class="text-muted small mb-3">@s_collins</p>
+                <p class="small px-3 mb-4 flex-grow-1">Author of The Hunger Games. Master of dystopian fiction and intense action.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">31</h6>
+                    <h6 class="fw-bold mb-0">4</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">22.1k</h6>
+                    <h6 class="fw-bold mb-0">35.2k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -227,22 +279,167 @@
               </div>
             </div>
           </div>
-          
-          <!-- Author Card 6 -->
-          <div class="col-md-4">
+          <div class="col-md-4 author-item">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
-              <div class="card-body">
-                <img src="https://i.pravatar.cc/150?img=22" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
-                <h5 class="fw-bold mb-1">HeartFelt</h5>
-                <p class="text-muted small mb-3">@heartfelt_romance</p>
-                <p class="small px-3 mb-4 flex-grow-1">Romance and slice of life. I specialize in slow-burn relationships across various anime.</p>
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Tite Kubo</h5>
+                <p class="text-muted small mb-3">@kubo_tite</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of Bleach. Known for incredible character designs and poetic storytelling.</p>
                 <div class="d-flex justify-content-center gap-4 mb-4">
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">45</h6>
+                    <h6 class="fw-bold mb-0">2</h6>
                     <small class="text-muted">Stories</small>
                   </div>
                   <div class="text-center">
-                    <h6 class="fw-bold mb-0">34.5k</h6>
+                    <h6 class="fw-bold mb-0">68.3k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Kohei Horikoshi</h5>
+                <p class="text-muted small mb-3">@horikoshi</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of My Hero Academia. Inspiring the next generation of superhero fans.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">1</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">55.8k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Hajime Isayama</h5>
+                <p class="text-muted small mb-3">@isayama</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of Attack on Titan. Master of plot twists and dark fantasy.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">1</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">70.4k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Agatha Christie</h5>
+                <p class="text-muted small mb-3">@agatha_c</p>
+                <p class="small px-3 mb-4 flex-grow-1">The Queen of Mystery. Best-selling novelist of all time with her detective stories.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">66</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">30.4k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">William Shakespeare</h5>
+                <p class="text-muted small mb-3">@bard_of_avon</p>
+                <p class="small px-3 mb-4 flex-grow-1">The greatest writer in the English language. Playwright and poet.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">39</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">100k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Neil Gaiman</h5>
+                <p class="text-muted small mb-3">@neil_gaiman</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of The Sandman, Coraline, and American Gods. Master of dark modern fantasy.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">20</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">48.6k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">Arthur Conan Doyle</h5>
+                <p class="text-muted small mb-3">@arthur_cd</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of Sherlock Holmes, the most famous fictional detective.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">22</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">31.9k</h6>
+                    <small class="text-muted">Followers</small>
+                  </div>
+                </div>
+                <button class="btn btn-outline-primary-custom rounded-pill px-4">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 author-item">
+            <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center py-4 hover-lift">
+              <div class="card-body d-flex flex-column">
+                <img src="assets/images/fantasy.png" class="rounded-circle mb-3 border border-3 border-primary" style="width: 100px; height: 100px; object-fit: cover;" alt="Author Avatar">
+                <h5 class="fw-bold mb-1">H.P. Lovecraft</h5>
+                <p class="text-muted small mb-3">@hp_lovecraft</p>
+                <p class="small px-3 mb-4 flex-grow-1">Creator of the Cthulhu Mythos. Master of cosmic horror.</p>
+                <div class="d-flex justify-content-center gap-4 mb-4">
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">25</h6>
+                    <small class="text-muted">Stories</small>
+                  </div>
+                  <div class="text-center">
+                    <h6 class="fw-bold mb-0">27.6k</h6>
                     <small class="text-muted">Followers</small>
                   </div>
                 </div>
@@ -251,7 +448,6 @@
             </div>
           </div>
         </div>
-        
         <!-- Pagination -->
         <nav class="mt-5">
           <ul class="pagination justify-content-center">
@@ -280,7 +476,7 @@
           <h4 class="footer-title h6">Quick Links</h4>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="about.html">About Us</a></li>
-            <li class="mb-2"><a href="blog.html">Community News</a></li>
+            <li class="mb-2"><a href="blog.html">Community</a></li>
             <li class="mb-2"><a href="contact.html">Support</a></li>
           </ul>
         </div>
@@ -310,5 +506,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/authors.js"></script>
 </body>
 </html>

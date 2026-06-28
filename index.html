@@ -49,23 +49,15 @@
             </ul>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Community
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
-              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
-              <li><a class="dropdown-item" href="story-preview.html">Featured Story</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Community</a></li>
 
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0"
-            aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i
+              class="ph-fill ph-moon-stars text-secondary"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i
+              class="ph-bold ph-arrows-left-right text-secondary"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -74,18 +66,24 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section position-relative d-flex align-items-center" style="background: url('assets/images/hero-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
+  <section class="hero-section position-relative d-flex align-items-center"
+    style="background: url('assets/images/hero-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-2">
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center">
           <div class="p-5 shadow-lg mx-auto" style="max-width: 900px;">
-            <h1 class="display-3 fw-bold mb-4 text-white">Write Stories.<br><span class="gradient-text">Expand Universes.</span><br>Share Your Imagination.</h1>
-            <p class="lead mb-5 text-light opacity-75 mx-auto" style="max-width: 700px;">Publish fan fiction inspired by your favorite worlds, build an audience, receive
+            <h1 class="display-3 fw-bold mb-4 text-white">Write Stories.<br><span class="gradient-text">Expand
+                Universes.</span><br>Share Your Imagination.</h1>
+            <p class="lead mb-5 text-light opacity-75 mx-auto" style="max-width: 700px;">Publish fan fiction inspired by
+              your favorite worlds, build an audience, receive
               feedback, and join thousands of passionate writers.</p>
             <div class="d-flex justify-content-center gap-3">
-              <a href="dashboard.html" class="btn btn-primary-custom btn-lg px-5 py-3 shadow hover-lift premium-hover rounded-pill">Start Writing</a>
-              <a href="#featured" class="btn btn-outline-light btn-lg px-5 py-3 hover-lift rounded-pill">Explore Stories</a>
+              <a href="dashboard.html"
+                class="btn btn-primary-custom btn-lg px-5 py-3 shadow hover-lift premium-hover rounded-pill">Start
+                Writing</a>
+              <a href="#featured" class="btn btn-outline-light btn-lg px-5 py-3 hover-lift rounded-pill">Explore
+                Stories</a>
             </div>
           </div>
         </div>
@@ -96,30 +94,27 @@
   <!-- Featured Stories -->
   <section id="featured" class="py-5">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-end mb-4">
-        <h2 class="mb-0">Trending Stories</h2>
-        <a href="story-preview.html" class="btn btn-link">View All →</a>
-      </div>
+      <h2 class="text-center mb-4">Trending Stories</h2>
       <div class="row g-4">
         <!-- Story 1 -->
         <div class="col-md-4">
-          <div class="story-card card h-100 border-0 shadow-sm">
-            <img src="assets/images/scifi.png"
-              class="card-img-top" alt="Story Cover" loading="lazy">
+          <div class="story-card card h-100 border-0 shadow-sm bg-dark text-white">
+            <img src="assets/images/Echoes of Andromeda.jfif" class="card-img-top" alt="Story Cover" loading="lazy">
             <div class="story-card-body p-4 d-flex flex-column h-100">
               <div class="mb-2">
                 <span class="badge bg-primary me-1">Sci-Fi</span>
-                <span class="badge bg-secondary">Marvel</span>
+                <span class="badge bg-secondary"><img src="assets/images/marvel_logo_v2.png" alt="Marvel Logo"
+                    style="height: 20px; width: auto; margin-right: 6px; object-fit: contain; vertical-align: middle;">Marvel</span>
               </div>
-              <h3 class="story-card-title h5 mt-2 mb-3">Echoes of Andromeda</h3>
-              <p class="story-card-text text-muted flex-grow-1">A continuation of the beloved series where the crew
+              <h3 class="story-card-title h5 mt-2 mb-3 text-white">Echoes of Andromeda</h3>
+              <p class="story-card-text text-light flex-grow-1">A continuation of the beloved series where the crew
                 faces a new unknown threat from the deep cosmos.</p>
-              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
+              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-light fw-medium">
                 <span><i class="ph-fill ph-eye align-middle me-1"></i> 45K Reads</span>
                 <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 2.3K Kudos</span>
                 <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 12 Ch.</span>
               </div>
-              <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
+              <div class="story-card-footer text-light small d-flex justify-content-between border-top border-secondary pt-3 mt-auto">
                 <span>By SpaceWriter99</span>
                 <span>Updated Today</span>
               </div>
@@ -128,23 +123,22 @@
         </div>
         <!-- Story 2 -->
         <div class="col-md-4">
-          <div class="story-card card h-100 border-0 shadow-sm">
-            <img src="assets/images/fantasy.png"
-              class="card-img-top" alt="Story Cover" loading="lazy">
+          <div class="story-card card h-100 border-0 shadow-sm bg-dark text-white">
+            <img src="assets/images/The Dragon's Legacy.jpg" class="card-img-top" alt="Story Cover" loading="lazy">
             <div class="story-card-body p-4 d-flex flex-column h-100">
               <div class="mb-2">
                 <span class="badge bg-primary me-1">Fantasy</span>
                 <span class="badge bg-secondary">Harry Potter</span>
               </div>
-              <h3 class="story-card-title h5 mt-2 mb-3">The Dragon's Legacy</h3>
-              <p class="story-card-text text-muted flex-grow-1">In a world where magic is outlawed, a young wizard must
+              <h3 class="story-card-title h5 mt-2 mb-3 text-white">The Dragon's Legacy</h3>
+              <p class="story-card-text text-light flex-grow-1">In a world where magic is outlawed, a young wizard must
                 hide his powers to survive.</p>
-              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
+              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-light fw-medium">
                 <span><i class="ph-fill ph-eye align-middle me-1"></i> 32K Reads</span>
                 <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 1.8K Kudos</span>
                 <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 8 Ch.</span>
               </div>
-              <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
+              <div class="story-card-footer text-light small d-flex justify-content-between border-top border-secondary pt-3 mt-auto">
                 <span>By MagicScribe</span>
                 <span>Updated 2d ago</span>
               </div>
@@ -153,23 +147,22 @@
         </div>
         <!-- Story 3 -->
         <div class="col-md-4">
-          <div class="story-card card h-100 border-0 shadow-sm">
-            <img src="assets/images/romance.png"
-              class="card-img-top" alt="Story Cover" loading="lazy">
+          <div class="story-card card h-100 border-0 shadow-sm bg-dark text-white">
+            <img src="assets/images/romance.png" class="card-img-top" alt="Story Cover" loading="lazy">
             <div class="story-card-body p-4 d-flex flex-column h-100">
               <div class="mb-2">
                 <span class="badge bg-primary me-1">Romance</span>
                 <span class="badge bg-secondary">Anime</span>
               </div>
-              <h3 class="story-card-title h5 mt-2 mb-3">A Walk in the Rain</h3>
-              <p class="story-card-text text-muted flex-grow-1">Two strangers meet during a storm, and their lives
+              <h3 class="story-card-title h5 mt-2 mb-3 text-white">A Walk in the Rain</h3>
+              <p class="story-card-text text-light flex-grow-1">Two strangers meet during a storm, and their lives
                 intertwine in ways they never expected.</p>
-              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-muted fw-medium">
+              <div class="story-stats d-flex flex-wrap gap-3 mb-3 small text-light fw-medium">
                 <span><i class="ph-fill ph-eye align-middle me-1"></i> 89K Reads</span>
                 <span><i class="ph-fill ph-heart text-danger align-middle me-1"></i> 5.4K Kudos</span>
                 <span><i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> 24 Ch.</span>
               </div>
-              <div class="story-card-footer text-muted small d-flex justify-content-between border-top pt-3 mt-auto">
+              <div class="story-card-footer text-light small d-flex justify-content-between border-top border-secondary pt-3 mt-auto">
                 <span>By HeartFelt</span>
                 <span>Completed</span>
               </div>
@@ -183,27 +176,30 @@
   <!-- Why Writers Love It -->
   <section class="py-5 bg-light" style="background-color: var(--bg-card) !important;">
     <div class="container py-4">
-      <h2 class="text-center mb-5 fw-bold"><span class="gradient-text">Why Writers Love Our Community</span></h2>
+      <h2 class="text-center mb-5 fw-bold">Why Writers Love Our Community</h2>
       <div class="row g-4 text-center">
         <div class="col-md-4">
-          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+          <div class="p-5 shadow-sm h-100 bg-dark text-white border border-secondary hover-lift premium-hover"
+            style="border-radius: var(--radius-card);">
             <div class="fs-1 mb-3"><i class="ph-fill ph-pencil-simple-line"></i></div>
-            <h3 class="h4 fw-bold">Unlimited Story Publishing</h3>
-            <p class="text-muted">Publish as many stories as you like and update chapters anytime.</p>
+            <h3 class="h4 fw-bold text-white">Unlimited Story Publishing</h3>
+            <p class="text-light">Publish as many stories as you like and update chapters anytime.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+          <div class="p-5 shadow-sm h-100 bg-dark text-white border border-secondary hover-lift premium-hover"
+            style="border-radius: var(--radius-card);">
             <div class="fs-1 mb-3"><i class="ph-fill ph-heart text-danger align-middle me-1"></i></div>
-            <h3 class="h4 fw-bold">Reader Kudos & Comments</h3>
-            <p class="text-muted">Receive instant appreciation and interact with your growing audience.</p>
+            <h3 class="h4 fw-bold text-white">Reader Kudos & Comments</h3>
+            <p class="text-light">Receive instant appreciation and interact with your growing audience.</p>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="p-5 shadow-sm h-100 bg-white dark-bg-dark border hover-lift premium-hover" style="border-radius: var(--radius-card);">
+          <div class="p-5 shadow-sm h-100 bg-dark text-white border border-secondary hover-lift premium-hover"
+            style="border-radius: var(--radius-card);">
             <div class="fs-1 mb-3"><i class="ph-fill ph-chart-bar"></i></div>
-            <h3 class="h4 fw-bold">Story Analytics</h3>
-            <p class="text-muted">Track readers, engagement, bookmarks, and kudos from your dashboard.</p>
+            <h3 class="h4 fw-bold text-white">Story Analytics</h3>
+            <p class="text-light">Track readers, engagement, bookmarks, and kudos from your dashboard.</p>
           </div>
         </div>
       </div>
@@ -216,27 +212,33 @@
       <h2 class="text-center mb-5">Join Thousands of Creators</h2>
       <div class="row g-4">
         <div class="col-md-4">
-          <div class="card p-4 h-100 border shadow-sm text-center">
+          <div class="card p-4 h-100 border border-secondary shadow-sm text-center bg-dark text-white">
             <div class="text-warning mb-2">★★★★★</div>
-            <p class="fst-italic flex-grow-1">"I found thousands of readers for my stories. The community here is
+            <p class="fst-italic text-light flex-grow-1">"I found thousands of readers for my stories. The community here is
               incredibly supportive."</p>
-            <div class="fw-bold mt-3">Emily, Fantasy Writer</div>
+            <img src="assets/images/person_emily.png" alt="Emily" class="rounded-circle mx-auto mt-3 mb-2"
+              style="width: 60px; height: 60px; object-fit: cover;">
+            <div class="fw-bold">Emily, Fantasy Writer</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-4 h-100 border shadow-sm text-center">
+          <div class="card p-4 h-100 border border-secondary shadow-sm text-center bg-dark text-white">
             <div class="text-warning mb-2">★★★★★</div>
-            <p class="fst-italic flex-grow-1">"The advanced tagging system helped me discover exactly the kind of
+            <p class="fst-italic text-light flex-grow-1">"The advanced tagging system helped me discover exactly the kind of
               stories I love to read."</p>
-            <div class="fw-bold mt-3">Daniel, Avid Reader</div>
+            <img src="assets/images/person_daniel.png" alt="Daniel" class="rounded-circle mx-auto mt-3 mb-2"
+              style="width: 60px; height: 60px; object-fit: cover;">
+            <div class="fw-bold">Daniel, Avid Reader</div>
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card p-4 h-100 border shadow-sm text-center">
+          <div class="card p-4 h-100 border border-secondary shadow-sm text-center bg-dark text-white">
             <div class="text-warning mb-2">★★★★★</div>
-            <p class="fst-italic flex-grow-1">"My stories receive feedback every day. The dashboard makes managing
+            <p class="fst-italic text-light flex-grow-1">"My stories receive feedback every day. The dashboard makes managing
               everything so easy."</p>
-            <div class="fw-bold mt-3">Sophia, Author</div>
+            <img src="assets/images/person_sophia.png" alt="Sophia" class="rounded-circle mx-auto mt-3 mb-2"
+              style="width: 60px; height: 60px; object-fit: cover;">
+            <div class="fw-bold">Sophia, Author</div>
           </div>
         </div>
       </div>
@@ -246,37 +248,125 @@
   <!-- Popular Fandoms -->
   <section class="py-5 bg-light" style="background-color: var(--bg-card) !important;">
     <div class="container text-center">
-      <h2 class="mb-4">Explore Popular Fandoms</h2>
+      <h2 class="mb-4"><span class="gradient-text">Explore Popular Fandoms</span></h2>
       <div class="row g-3 justify-content-center">
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">Marvel<br><small
-              class="text-muted fw-normal">14k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/marvel.png" alt="Marvel" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            Marvel<br><small class="text-muted fw-normal">14k Stories</small></a>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">Harry
-            Potter<br><small class="text-muted fw-normal">12k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/harry_potter.png" alt="Harry Potter" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            Harry Potter<br><small class="text-muted fw-normal">12k Stories</small></a>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">Naruto<br><small
-              class="text-muted fw-normal">8k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/naruto.png" alt="Naruto" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            Naruto<br><small class="text-muted fw-normal">8k Stories</small></a>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">Star
-            Wars<br><small class="text-muted fw-normal">6k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/star_wars.png" alt="Star Wars" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            Star Wars<br><small class="text-muted fw-normal">6k Stories</small></a>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">One
-            Piece<br><small class="text-muted fw-normal">5k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/one_piece.png" alt="One Piece" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            One Piece<br><small class="text-muted fw-normal">5k Stories</small></a>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
           <a href="#"
-            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">Anime<br><small
-              class="text-muted fw-normal">10k Stories</small></a>
+            class="d-block p-3 border rounded shadow-sm text-decoration-none text-body fw-bold hover-lift bg-white dark-bg-dark">
+            <img src="assets/images/anime.png" alt="Anime" class="mb-2"
+              style="height: 40px; width: 80px; object-fit: contain;"><br>
+            Anime<br><small class="text-muted fw-normal">10k Stories</small></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Top Authors Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4"><span class="gradient-text">Top Authors This Week</span></h2>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="card border border-secondary shadow-sm text-center p-4 hover-lift bg-dark text-white">
+            <img src="assets/images/team_alice.png" alt="Author" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--primary-color);">
+            <h5 class="fw-bold mb-1">Alice Writer</h5>
+            <p class="text-light small mb-3">1.2M Reads</p>
+            <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Follow</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card border border-secondary shadow-sm text-center p-4 hover-lift bg-dark text-white">
+            <img src="assets/images/team_bob.png" alt="Author" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--primary-color);">
+            <h5 class="fw-bold mb-1">Bob Stories</h5>
+            <p class="text-light small mb-3">900k Reads</p>
+            <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Follow</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card border border-secondary shadow-sm text-center p-4 hover-lift bg-dark text-white">
+            <img src="assets/images/team_charlie.png" alt="Author" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--primary-color);">
+            <h5 class="fw-bold mb-1">Charlie Pen</h5>
+            <p class="text-light small mb-3">850k Reads</p>
+            <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Follow</button>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card border border-secondary shadow-sm text-center p-4 hover-lift bg-dark text-white">
+            <img src="assets/images/author_magic.png" alt="Author" class="rounded-circle mx-auto mb-3" style="width: 80px; height: 80px; object-fit: cover; border: 3px solid var(--primary-color);">
+            <h5 class="fw-bold mb-1">Magic Words</h5>
+            <p class="text-light small mb-3">800k Reads</p>
+            <button class="btn btn-outline-primary btn-sm rounded-pill w-100 fw-bold">Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-5 bg-light" style="background-color: var(--bg-card) !important;">
+    <div class="container text-center">
+      <h2 class="mb-5">How It Works</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border border-secondary rounded shadow-sm bg-dark text-white h-100 hover-lift">
+            <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 24px;">
+              1
+            </div>
+            <h4 class="fw-bold mb-3 text-white">Create an Account</h4>
+            <p class="text-light">Sign up in seconds and join a community of thousands of passionate readers and writers.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border border-secondary rounded shadow-sm bg-dark text-white h-100 hover-lift">
+            <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 24px;">
+              2
+            </div>
+            <h4 class="fw-bold mb-3 text-white">Write or Read</h4>
+            <p class="text-light">Publish your own fan fiction stories or discover amazing new worlds created by others.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border border-secondary rounded shadow-sm bg-dark text-white h-100 hover-lift">
+            <div class="d-inline-flex align-items-center justify-content-center bg-primary text-white rounded-circle mb-4" style="width: 60px; height: 60px; font-size: 24px;">
+              3
+            </div>
+            <h4 class="fw-bold mb-3 text-white">Engage & Grow</h4>
+            <p class="text-light">Leave comments, vote on your favorite chapters, and connect with fans worldwide.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -299,15 +389,21 @@
         <div class="col-lg-4 col-md-6">
           <a class="navbar-brand mb-3 justify-content-start" href="index.html">
             <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
-        FanFicHub
+            FanFicHub
           </a>
           <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-muted hover-primary" aria-label="X"><i class="ph-fill ph-x-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="Facebook"><i class="ph-fill ph-facebook-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="Instagram"><i class="ph-fill ph-instagram-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="YouTube"><i class="ph-fill ph-youtube-logo fs-4"></i></a>
+          </div>
         </div>
         <div class="col-lg-2 col-md-6">
           <h4 class="footer-title h6">Quick Links</h4>
           <ul class="list-unstyled">
             <li class="mb-2"><a href="about.html">About Us</a></li>
-            <li class="mb-2"><a href="blog.html">Community News</a></li>
+            <li class="mb-2"><a href="blog.html">Community</a></li>
             <li class="mb-2"><a href="contact.html">Support</a></li>
           </ul>
         </div>

@@ -17,6 +17,54 @@
     }
   </style>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Footer -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand mb-3 justify-content-start" href="index.html">
+            <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
+            FanFicHub
+          </a>
+          <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+          <div class="d-flex gap-3 mt-4">
+            <a href="#" class="text-muted hover-primary" aria-label="X"><i class="ph-fill ph-x-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="Facebook"><i class="ph-fill ph-facebook-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="Instagram"><i class="ph-fill ph-instagram-logo fs-4"></i></a>
+            <a href="#" class="text-muted hover-primary" aria-label="YouTube"><i class="ph-fill ph-youtube-logo fs-4"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">Community</a></li>
+            <li class="mb-2"><a href="contact.html">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-title h6">Legal</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            <li class="mb-2"><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-title h6">Newsletter</h4>
+          <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
+          <form class="d-flex gap-2 needs-validation" novalidate>
+            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+            <button class="btn btn-primary-custom" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        &copy; 2026 FanFicHub. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body class="bg-light">
@@ -49,15 +97,7 @@
             </ul>
           </li>
           
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="communityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Community
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="communityDropdown">
-              <li><a class="dropdown-item" href="blog.html">Community News</a></li>
-              <li><a class="dropdown-item active" href="story-preview.html">Featured Story</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Community</a></li>
           
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
@@ -135,7 +175,7 @@
               <div class="card-body p-4 p-md-5 text-center position-relative z-1 bg-white mx-0 mx-md-4 mb-4 rounded-4 shadow-sm" style="margin-top: -100px;">
                 <div class="mb-3">
                   <span class="badge bg-primary">Sci-Fi</span>
-                  <span class="badge bg-secondary">Marvel</span>
+                  <span class="badge bg-secondary"><img src="assets/images/marvel_logo_v2.png" alt="Marvel Logo" style="height: 20px; width: auto; margin-right: 6px; object-fit: contain; vertical-align: middle;">Marvel</span>
                   <span class="badge bg-success">Completed</span>
                 </div>
                 <h1 class="display-5 fw-bold mb-3"><span class="gradient-text">Echoes of Andromeda</span></h1>
@@ -271,6 +311,8 @@
       </main>
     </div>
   </div>
+
+    <button id="backToTop" aria-label="Back to Top">↑</button>
 
   <!-- Bootstrap 5 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
