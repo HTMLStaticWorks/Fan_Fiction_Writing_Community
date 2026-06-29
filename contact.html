@@ -46,8 +46,8 @@
           <li class="nav-item"><a class="nav-link active" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -60,7 +60,7 @@
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
       <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
-        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text">Support & Contact</span></h1>
+        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text-light">Support & Contact</span></h1>
         <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Need help with your account or stories? We'd love to hear from you.</p>
       </div>
     </div>
@@ -118,23 +118,28 @@
             <h3 class="h4 fw-bold text-white mb-2">Send a Message</h3>
             <p class="text-white-50 small">We usually respond within 24 hours.</p>
           </div>
+          <style>
+            .contact-input::placeholder {
+              color: rgba(255, 255, 255, 0.6) !important;
+            }
+          </style>
           <form class="needs-validation" novalidate>
             <div class="row g-4">
               <div class="col-md-6">
                 <label for="name" class="form-label fw-medium text-white-50 small text-uppercase tracking-wider">Name</label>
-                <input type="text" class="form-control" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="name" placeholder="John Doe" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
+                <input type="text" class="form-control contact-input" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="name" placeholder="John Doe" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label fw-medium text-white-50 small text-uppercase tracking-wider">Email</label>
-                <input type="email" class="form-control" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="email" placeholder="john@example.com" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
+                <input type="email" class="form-control contact-input" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="email" placeholder="john@example.com" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
               </div>
               <div class="col-12">
                 <label for="subject" class="form-label fw-medium text-white-50 small text-uppercase tracking-wider">Subject</label>
-                <input type="text" class="form-control" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="subject" placeholder="How can we help you?" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
+                <input type="text" class="form-control contact-input" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="subject" placeholder="How can we help you?" required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';">
               </div>
               <div class="col-12">
                 <label for="message" class="form-label fw-medium text-white-50 small text-uppercase tracking-wider">Message</label>
-                <textarea class="form-control" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="message" rows="5" placeholder="Write your message here..." required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';"></textarea>
+                <textarea class="form-control contact-input" style="background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white;" id="message" rows="5" placeholder="Write your message here..." required onfocus="this.style.backgroundColor='rgba(255,255,255,0.1)'; this.style.borderColor='var(--color-primary)';" onblur="this.style.backgroundColor='rgba(255,255,255,0.05)'; this.style.borderColor='rgba(255,255,255,0.1)';"></textarea>
               </div>
               <div class="col-12 mt-5">
                 <button class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm d-flex align-items-center justify-content-center gap-2" type="submit">
@@ -147,6 +152,63 @@
       </div>
     </div>
   </div>
+
+  <!-- Global Branches Section -->
+  <section class="py-5 bg-dark border-top border-bottom border-secondary border-opacity-10">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-6 fw-bold text-white">Our Global <span class="text-primary">Branches</span></h2>
+        <p class="text-white-50 mx-auto" style="max-width: 600px;">Visit us at any of our beautiful office locations worldwide.</p>
+      </div>
+      <div class="row g-4">
+        <!-- New York -->
+        <div class="col-12 col-lg-4">
+          <div class="card bg-dark text-white border-secondary border-opacity-25 h-100 shadow-sm overflow-hidden rounded-4 story-card">
+            <img src="assets/images/new_york_office.png" class="card-img-top object-fit-cover" alt="New York Office" style="height: 250px;">
+            <div class="card-body p-4 text-center">
+              <h4 class="card-title fw-bold mb-3 d-flex align-items-center justify-content-center">
+                <i class="ph-fill ph-buildings text-primary me-2"></i> New York, USA
+              </h4>
+              <p class="card-text text-white-50 mb-3">123 Fiction Way, Suite 400<br>Storyville, NY 10001</p>
+              <div class="d-flex align-items-center justify-content-center text-primary small fw-medium">
+                <i class="ph-bold ph-phone me-2"></i> +1 (555) 123-4567
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- London -->
+        <div class="col-12 col-lg-4">
+          <div class="card bg-dark text-white border-secondary border-opacity-25 h-100 shadow-sm overflow-hidden rounded-4 story-card">
+            <img src="assets/images/london_office.png" class="card-img-top object-fit-cover" alt="London Office" style="height: 250px;">
+            <div class="card-body p-4 text-center">
+              <h4 class="card-title fw-bold mb-3 d-flex align-items-center justify-content-center">
+                <i class="ph-fill ph-buildings text-primary me-2"></i> London, UK
+              </h4>
+              <p class="card-text text-white-50 mb-3">45 Tale Street, Book End<br>London, LDN 2B4</p>
+              <div class="d-flex align-items-center justify-content-center text-primary small fw-medium">
+                <i class="ph-bold ph-phone me-2"></i> +44 20 7946 0958
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Tokyo -->
+        <div class="col-12 col-lg-4">
+          <div class="card bg-dark text-white border-secondary border-opacity-25 h-100 shadow-sm overflow-hidden rounded-4 story-card">
+            <img src="assets/images/tokyo_office.png" class="card-img-top object-fit-cover" alt="Tokyo Office" style="height: 250px;">
+            <div class="card-body p-4 text-center">
+              <h4 class="card-title fw-bold mb-3 d-flex align-items-center justify-content-center">
+                <i class="ph-fill ph-buildings text-primary me-2"></i> Tokyo, Japan
+              </h4>
+              <p class="card-text text-white-50 mb-3">8-9 Manga Blvd, Shinjuku<br>Tokyo, 160-0022</p>
+              <div class="d-flex align-items-center justify-content-center text-primary small fw-medium">
+                <i class="ph-bold ph-phone me-2"></i> +81 3-1234-5678
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Interactive Map -->
   <section class="position-relative w-100" style="height: 500px; overflow: hidden;">
@@ -201,7 +263,7 @@
         <div class="col-lg-4 col-md-6">
           <h4 class="footer-title h6">Newsletter</h4>
           <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
-          <form class="d-flex gap-2 needs-validation" novalidate>
+          <form class="d-flex flex-column flex-sm-row gap-2 needs-validation" novalidate>
             <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>

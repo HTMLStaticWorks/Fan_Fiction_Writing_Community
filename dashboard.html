@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
 <head>
   <meta charset="UTF-8">
@@ -16,25 +16,31 @@
 
   <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom shadow-sm">
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-3 px-md-4">
       <a class="navbar-brand fw-bold" href="index.html">
-        <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
-        FanFicHub
+        <i class="ph-fill ph-book-open-text text-primary" style="font-size: 1.5rem;"></i>
+        <span class="ms-1">FanFicHub</span>
       </a>
-      <div class="d-flex ms-auto gap-3 align-items-center">
-        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
+      
+      <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        
         <div class="dropdown">
-          <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://ui-avatars.com/api/?name=Writer&background=random" alt="mdo" width="32" height="32" class="rounded-circle">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
+            <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="#">New story...</a></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
           </ul>
         </div>
+
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+          <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -46,41 +52,42 @@
         <div class="position-sticky sidebar-sticky">
           <ul class="nav flex-column gap-2 px-2">
             <li class="nav-item">
-              <a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="#">
-                <i class="ph-fill ph-chart-bar"></i> Dashboard
+              <a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="dashboard.html">
+                <i class="ph-fill ph-chart-bar me-2"></i>Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-body hover-lift rounded" href="#">
-                <i class="ph-fill ph-pencil-simple-line"></i> My Stories
+              <a class="nav-link text-body hover-lift rounded" href="writer-stories.html">
+                <i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-body hover-lift rounded" href="#">
-                <i class="ph-fill ph-bookmarks align-middle me-1 text-primary"></i> Reading Lists
+              <a class="nav-link text-body hover-lift rounded" href="writer-comments.html">
+                <i class="ph-fill ph-chat-centered-text me-2"></i>Comments & Reviews
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-body hover-lift rounded" href="#">
-                🔔 Notifications <span class="badge bg-danger rounded-pill float-end">3</span>
+              <a class="nav-link text-body hover-lift rounded" href="writer-earnings.html">
+                <i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings
               </a>
             </li>
-          </ul>
-
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-2 text-muted text-uppercase">
-            <span>My Reading Lists</span>
-          </h6>
-          <ul class="nav flex-column mb-2 px-2">
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded small" href="#">📚 Read Later</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded small" href="#">⭐ Favorites</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded small" href="#">✨ Best Fantasy</a></li>
+            <li class="nav-item">
+              <a class="nav-link text-body hover-lift rounded" href="writer-analytics.html">
+                <i class="ph-fill ph-chart-line-up me-2"></i>Analytics
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-body hover-lift rounded" href="writer-settings.html">
+                <i class="ph-fill ph-gear me-2"></i>Settings
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
 
       <!-- Main Content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-bottom-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover; margin-top: -1.5rem;">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
           <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
             <div>

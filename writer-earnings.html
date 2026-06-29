@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings | FanFicHub Writer Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .earning-card { border-radius:14px; transition:transform .2s,box-shadow .2s; }
+    .earning-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10)!important; }
+    .chart-bar { border-radius:6px 6px 0 0; min-width:28px; transition:height .4s; }
+    .chart-bar:hover { filter:brightness(.9); }
+    .bar-chart { display:flex; align-items:flex-end; gap:6px; height:120px; }
+    .month-label { font-size:.72rem; color:#6c757d; text-align:center; }
+    .payout-row { border-radius:10px; transition:background .15s; }
+    .payout-row:hover { background:#f8f9fa; }
+    .badge-paid    { background:rgba(25,135,84,.12);color:#198754;border:1px solid rgba(25,135,84,.3); }
+    .badge-pending { background:rgba(255,193,7,.12);color:#b08000;border:1px solid rgba(255,193,7,.4); }
+    .tier-badge { border-radius:20px; font-size:.78rem; padding:3px 12px; font-weight:600; }
+    .tier-gold   { background:#fff3cd;color:#b08000; }
+    .tier-silver { background:#f1f1f1;color:#6c757d; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom shadow-sm">
+    <div class="container-fluid px-3 px-md-4">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="ph-fill ph-book-open-text text-primary" style="font-size: 1.5rem;"></i>
+        <span class="ms-1">FanFicHub</span>
+      </a>
+      <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
+            <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+          </ul>
+        </div>
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+          <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid pb-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-end vh-100 py-3">
+        <div class="position-sticky sidebar-sticky">
+          <ul class="nav flex-column gap-2 px-2">
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-earnings.html"><i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-analytics.html"><i class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+        <!-- Hero Banner -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+          <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
+            <div>
+              <h1 class="h2 fw-bold mb-0"><span class="gradient-text">Earnings</span></h1>
+              <p class="text-light opacity-75 mb-0 small mt-1">Track your revenue, tips, and payout history.</p>
+            </div>
+            <button class="btn btn-primary-custom fw-bold shadow-sm px-4"><i class="ph-bold ph-bank me-1"></i>Request Payout</button>
+          </div>
+        </div>
+
+        <!-- Earnings Summary Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-lg-3">
+            <div class="card earning-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle p-2" style="background:rgba(13,110,253,.1)"><i class="ph-fill ph-currency-circle-dollar text-primary fs-5"></i></div>
+                <span class="text-muted small fw-semibold">Total Earned</span>
+              </div>
+              <div class="fs-2 fw-bold text-dark">$2,840</div>
+              <div class="small text-success mt-1"><i class="ph-fill ph-trend-up me-1"></i>+18% vs last month</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card earning-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle p-2" style="background:rgba(255,193,7,.1)"><i class="ph-fill ph-hand-coins" style="color:#b08000;font-size:1.2rem"></i></div>
+                <span class="text-muted small fw-semibold">Tips Received</span>
+              </div>
+              <div class="fs-2 fw-bold text-dark">$420</div>
+              <div class="small text-success mt-1"><i class="ph-fill ph-trend-up me-1"></i>+34 new tips</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card earning-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle p-2" style="background:rgba(25,135,84,.1)"><i class="ph-fill ph-check-circle text-success fs-5"></i></div>
+                <span class="text-muted small fw-semibold">Paid Out</span>
+              </div>
+              <div class="fs-2 fw-bold text-dark">$2,100</div>
+              <div class="small text-muted mt-1">Last: May 30, 2026</div>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="card earning-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <div class="rounded-circle p-2" style="background:rgba(108,117,125,.1)"><i class="ph-fill ph-clock text-secondary fs-5"></i></div>
+                <span class="text-muted small fw-semibold">Pending</span>
+              </div>
+              <div class="fs-2 fw-bold text-dark">$740</div>
+              <div class="small text-muted mt-1">Next payout: Jul 5</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <!-- Monthly Bar Chart (visual only, no JS library) -->
+          <div class="col-12 col-lg-7">
+            <div class="card border-0 shadow-sm bg-white p-4 h-100 rounded-3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">Monthly Earnings</h5>
+                <select class="form-select form-select-sm w-auto">
+                  <option>2026</option>
+                  <option>2025</option>
+                </select>
+              </div>
+              <div class="bar-chart mb-1" style="align-items:flex-end">
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar bg-primary" style="height:40px;width:32px;" title="Jan: $180"></div>
+                  <div class="month-label">Jan</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar bg-primary" style="height:55px;width:32px;" title="Feb: $240"></div>
+                  <div class="month-label">Feb</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar bg-primary" style="height:70px;width:32px;" title="Mar: $310"></div>
+                  <div class="month-label">Mar</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar bg-primary" style="height:90px;width:32px;" title="Apr: $400"></div>
+                  <div class="month-label">Apr</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar bg-primary" style="height:80px;width:32px;" title="May: $360"></div>
+                  <div class="month-label">May</div>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                  <div class="chart-bar" style="height:110px;width:32px;background:linear-gradient(to top,#6c63ff,#48cae4);border-radius:6px 6px 0 0;" title="Jun: $490"></div>
+                  <div class="month-label fw-bold text-primary">Jun</div>
+                </div>
+              </div>
+              <div class="small text-muted mt-1">Total earned this year: <strong class="text-dark">$1,980</strong></div>
+            </div>
+          </div>
+
+          <!-- Membership Tier -->
+          <div class="col-12 col-lg-5">
+            <div class="card border-0 shadow-sm bg-white p-4 h-100 rounded-3">
+              <h5 class="fw-bold mb-3">Writer Tier</h5>
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div style="font-size:2.5rem">🥇</div>
+                <div>
+                  <span class="tier-badge tier-gold">Gold Writer</span>
+                  <div class="small text-muted mt-1">Next: Platinum at $5,000 lifetime</div>
+                </div>
+              </div>
+              <div class="mb-2 small fw-semibold d-flex justify-content-between">
+                <span>Progress to Platinum</span><span class="text-primary">$2,840 / $5,000</span>
+              </div>
+              <div class="progress mb-3" style="height:8px;border-radius:10px">
+                <div class="progress-bar" style="width:57%;background:linear-gradient(to right,#6c63ff,#48cae4)"></div>
+              </div>
+              <ul class="list-unstyled small text-muted mb-0">
+                <li class="mb-1"><i class="ph-fill ph-check-circle text-success me-2"></i>Monetized stories unlocked</li>
+                <li class="mb-1"><i class="ph-fill ph-check-circle text-success me-2"></i>Priority support access</li>
+                <li class="mb-1"><i class="ph-fill ph-check-circle text-success me-2"></i>Custom author page</li>
+                <li class="text-muted"><i class="ph-fill ph-lock me-2"></i>Platinum badge (at $5,000)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payout History -->
+        <div class="card border-0 shadow-sm bg-white rounded-3 mb-4">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="fw-bold mb-0">Payout History</h5>
+              <button class="btn btn-sm btn-outline-primary rounded-pill"><i class="ph-bold ph-download-simple me-1"></i>Export CSV</button>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light text-muted small text-uppercase">
+                  <tr>
+                    <th class="ps-3">Date</th>
+                    <th>Amount</th>
+                    <th>Method</th>
+                    <th>Ref ID</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="payout-row">
+                    <td class="ps-3 small">May 30, 2026</td>
+                    <td class="fw-bold">$480.00</td>
+                    <td class="small text-muted"><i class="ph-fill ph-paypal-logo me-1"></i>PayPal</td>
+                    <td class="small text-muted font-monospace">TXN-88421</td>
+                    <td><span class="badge rounded-pill badge-paid">Paid</span></td>
+                  </tr>
+                  <tr class="payout-row">
+                    <td class="ps-3 small">Apr 30, 2026</td>
+                    <td class="fw-bold">$620.00</td>
+                    <td class="small text-muted"><i class="ph-fill ph-bank me-1"></i>Bank Transfer</td>
+                    <td class="small text-muted font-monospace">TXN-77312</td>
+                    <td><span class="badge rounded-pill badge-paid">Paid</span></td>
+                  </tr>
+                  <tr class="payout-row">
+                    <td class="ps-3 small">Mar 30, 2026</td>
+                    <td class="fw-bold">$310.00</td>
+                    <td class="small text-muted"><i class="ph-fill ph-paypal-logo me-1"></i>PayPal</td>
+                    <td class="small text-muted font-monospace">TXN-65204</td>
+                    <td><span class="badge rounded-pill badge-paid">Paid</span></td>
+                  </tr>
+                  <tr class="payout-row">
+                    <td class="ps-3 small">Jun 30, 2026</td>
+                    <td class="fw-bold">$740.00</td>
+                    <td class="small text-muted"><i class="ph-fill ph-bank me-1"></i>Bank Transfer</td>
+                    <td class="small text-muted font-monospace">TXN-pending</td>
+                    <td><span class="badge rounded-pill badge-pending">Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

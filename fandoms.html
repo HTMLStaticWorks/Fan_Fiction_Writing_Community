@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -20,18 +22,20 @@
         <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
         FanFicHub
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="home-2.html">Home 2</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          
+
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle active" href="#" id="exploreDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
               Explore
             </a>
             <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
@@ -40,14 +44,16 @@
               <li><a class="dropdown-item" href="authors.html">Discover Authors</a></li>
             </ul>
           </li>
-          
+
           <li class="nav-item"><a class="nav-link" href="blog.html">Community</a></li>
-          
+
           <li class="nav-item"><a class="nav-link" href="contact.html">Support</a></li>
         </ul>
         <div class="d-flex ms-3 gap-2 align-items-center">
-          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars text-secondary"></i></button>
-          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right text-secondary"></i></button>
+          <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle Theme"><i
+              class="ph-fill ph-moon-stars"></i></button>
+          <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0" aria-label="Toggle RTL"><i
+              class="ph-bold ph-arrows-left-right"></i></button>
           <a href="login.html" class="btn btn-outline-custom ms-2">Login</a>
           <a href="dashboard.html" class="btn btn-primary-custom">Dashboard</a>
         </div>
@@ -56,44 +62,47 @@
   </nav>
 
   <!-- Page Header -->
-  <section class="position-relative py-5 d-flex align-items-center text-center text-white" style="background: url('assets/images/fandoms-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
+  <section class="position-relative py-5 d-flex align-items-center text-center text-white"
+    style="background: url('assets/images/fandoms-bg.png') no-repeat center center; background-size: cover; min-height: calc(100vh - 76px);">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
       <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
-        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text">Browse by Fandom</span></h1>
-        <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Find exactly the universes you want to read and write about.</p>
+        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text-light">Browse by Fandom</span></h1>
+        <p class="lead text-light opacity-75 mx-auto" style="max-width: 600px;">Find exactly the universes you want to
+          read and write about.</p>
       </div>
     </div>
   </section>
 
   <!-- Fandoms Content -->
   <div class="container py-5">
-    
+
     <!-- Search Bar -->
-    <div class="row justify-content-center mb-5">
+    <!-- <div class="row justify-content-center mb-5">
       <div class="col-md-8">
         <div class="input-group input-group-lg shadow-sm">
           <input type="text" class="form-control border-0 px-4" placeholder="Search fandoms (e.g., Marvel, Naruto, Harry Potter)..." aria-label="Search fandoms">
           <button class="btn btn-primary-custom px-4" type="button">Search</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Category Headers & Grids -->
-    
+
     <!-- Category 1 -->
     <div class="mb-5">
       <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
         <h3 class="fw-bold mb-0 me-3">Movies & TV Shows</h3>
         <span class="badge bg-primary-custom rounded-pill">240 Fandoms</span>
       </div>
-      
+
       <div class="row g-4">
         <!-- Fandom Card -->
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/marvel_logo_v2.png" class="card-img-top object-fit-cover" alt="Marvel" style="height: 140px; width: 100%;">
+              <img src="assets/images/marvellogo.jpg" class="card-img-top object-fit-cover" alt="Marvel"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Marvel Universe</h5>
                 <p class="text-muted small mb-0">45k Stories</p>
@@ -105,7 +114,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/dc_logo_v2.png" class="card-img-top object-fit-cover" alt="DC" style="height: 140px; width: 100%;">
+              <img src="assets/images/dclogo.jfif" class="card-img-top object-fit-cover" alt="DC"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">DC Universe</h5>
                 <p class="text-muted small mb-0">28k Stories</p>
@@ -117,7 +127,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/starwarslogo.jpg" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Star Wars</h5>
                 <p class="text-muted small mb-0">34k Stories</p>
@@ -129,7 +140,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/starngethingslogo.jfif" class="card-img-top object-fit-cover"
+                alt="Fandom Placeholder" style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Stranger Things</h5>
                 <p class="text-muted small mb-0">12k Stories</p>
@@ -139,20 +151,21 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Category 2 -->
     <div class="mb-5">
       <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
         <h3 class="fw-bold mb-0 me-3">Anime & Manga</h3>
         <span class="badge bg-primary-custom rounded-pill">510 Fandoms</span>
       </div>
-      
+
       <div class="row g-4">
         <!-- Fandom Card -->
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/naruto.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Naruto</h5>
                 <p class="text-muted small mb-0">52k Stories</p>
@@ -164,7 +177,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/onepiece.webp" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">One Piece</h5>
                 <p class="text-muted small mb-0">38k Stories</p>
@@ -176,7 +190,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/bleach.jpg" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Bleach</h5>
                 <p class="text-muted small mb-0">21k Stories</p>
@@ -188,7 +203,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/myhero.jpg" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">My Hero Academia</h5>
                 <p class="text-muted small mb-0">48k Stories</p>
@@ -198,20 +214,21 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Category 3 -->
     <div class="mb-5">
       <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
         <h3 class="fw-bold mb-0 me-3">Books & Literature</h3>
         <span class="badge bg-primary-custom rounded-pill">120 Fandoms</span>
       </div>
-      
+
       <div class="row g-4">
         <!-- Fandom Card -->
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/harrypotter.jpg" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Harry Potter</h5>
                 <p class="text-muted small mb-0">95k Stories</p>
@@ -223,7 +240,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/hungergames.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">The Hunger Games</h5>
                 <p class="text-muted small mb-0">18k Stories</p>
@@ -235,7 +253,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/lordofrings.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Lord of the Rings</h5>
                 <p class="text-muted small mb-0">22k Stories</p>
@@ -247,7 +266,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/PercyJackson.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Percy Jackson</h5>
                 <p class="text-muted small mb-0">29k Stories</p>
@@ -258,20 +278,21 @@
       </div>
     </div>
 
-    
+
     <!-- Category 4 -->
     <div class="mb-5">
       <div class="d-flex align-items-center mb-4 pb-2 border-bottom">
         <h3 class="fw-bold mb-0 me-3">Video Games</h3>
         <span class="badge bg-primary-custom rounded-pill">310 Fandoms</span>
       </div>
-      
+
       <div class="row g-4">
         <!-- Fandom Card -->
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/pokemon.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Pokémon</h5>
                 <p class="text-muted small mb-0">85k Stories</p>
@@ -283,7 +304,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/LegendZelda.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Legend of Zelda</h5>
                 <p class="text-muted small mb-0">24k Stories</p>
@@ -295,7 +317,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/GenshinImpact.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Genshin Impact</h5>
                 <p class="text-muted small mb-0">41k Stories</p>
@@ -307,7 +330,8 @@
         <div class="col-md-3 col-6">
           <a href="explore-stories.html" class="text-decoration-none">
             <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-              <img src="assets/images/fantasy.png" class="card-img-top object-fit-cover" alt="Fandom Placeholder" style="height: 140px; width: 100%;">
+              <img src="assets/images/finalfantacy.jfif" class="card-img-top object-fit-cover" alt="Fandom Placeholder"
+                style="height: 140px; width: 100%;">
               <div class="card-body py-3">
                 <h5 class="fw-bold text-body mb-1">Final Fantasy</h5>
                 <p class="text-muted small mb-0">37k Stories</p>
@@ -350,7 +374,8 @@
           <h4 class="footer-title h6">Newsletter</h4>
           <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
           <form class="d-flex flex-column align-items-center gap-3 needs-validation" novalidate>
-            <input type="email" class="form-control form-control-custom text-center" placeholder="Your email address" required>
+            <input type="email" class="form-control form-control-custom text-center" placeholder="Your email address"
+              required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>
         </div>
@@ -366,4 +391,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

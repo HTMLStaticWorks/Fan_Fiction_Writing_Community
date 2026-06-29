@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const applyBtn = document.getElementById('applyFiltersBtn');
   const allCards = Array.from(document.querySelectorAll('.story-item'));
   const resultsCount = document.getElementById('resultsCount');
   const paginationControls = document.getElementById('paginationControls');
@@ -16,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'fandomStarWars': 'starwars',
     'fandomLOTR': 'lotr',
     'fandomDC': 'dc',
-    'fandomST': 'st',
-    'fandomPJ': 'pj',
-    'fandomMHA': 'mha'
+    'fandomST': 'st'
   };
 
 
@@ -32,7 +29,7 @@ const selectedFandoms = Object.keys(fandomMap)
 
     filteredCards = allCards.filter(card => {
       const cardFandom = card.getAttribute('data-fandom') || '';
-      return selectedFandoms.length === 0 || selectedFandoms.some(f => cardFandom.includes(f));
+      return selectedFandoms.length === 0 || selectedFandoms.some(f => cardFandom === f);
     });
 
     currentPage = 1;
@@ -131,12 +128,13 @@ const selectedFandoms = Object.keys(fandomMap)
     });
   }
 
-  if (applyBtn) {
-    applyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      applyFilters();
-    });
-  }
+  // Add change listeners to all checkboxes
+  Object.keys(fandomMap).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('change', applyFilters);
+    }
+  });
 
   // Initial render (no filters applied by default so it shows first page of all cards)
   applyFilters();

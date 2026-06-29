@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comments &amp; Reviews | FanFicHub Writer Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .comment-card { border-radius: 14px; transition: box-shadow .2s; border: 1px solid #f0f0f0; }
+    .comment-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.09)!important; }
+    .reviewer-avatar { width:46px; height:46px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid #e8eaed; }
+    .star-filled { color:#f5a623; }
+    .star-empty  { color:#dee2e6; }
+    .tab-pill { border-radius: 50px; font-size:.82rem; padding:.3rem 1rem; cursor:pointer; border: 1.5px solid #dee2e6; background:#fff; transition:all .15s; font-weight:500; }
+    .tab-pill.active, .tab-pill:hover { background:var(--bs-primary); color:#fff; border-color:var(--bs-primary); }
+    .sentiment-positive { color:#198754; background:rgba(25,135,84,.1); padding:2px 8px; border-radius:20px; font-size:.75rem; font-weight:600; }
+    .sentiment-neutral  { color:#6c757d; background:rgba(108,117,125,.1); padding:2px 8px; border-radius:20px; font-size:.75rem; font-weight:600; }
+    .reply-btn { font-size:.78rem; color:var(--bs-primary); cursor:pointer; border:none; background:none; padding:0; }
+    .reply-btn:hover { text-decoration:underline; }
+    .unread-dot { width:8px; height:8px; background:#0d6efd; border-radius:50%; display:inline-block; }
+    .my-avatar { width:36px; height:36px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid #0d6efd; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom shadow-sm">
+    <div class="container-fluid px-3 px-md-4">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="ph-fill ph-book-open-text text-primary" style="font-size: 1.5rem;"></i>
+        <span class="ms-1">FanFicHub</span>
+      </a>
+      <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
+            <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+          </ul>
+        </div>
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+          <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid pb-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-end vh-100 py-3">
+        <div class="position-sticky sidebar-sticky">
+          <ul class="nav flex-column gap-2 px-2">
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-comments.html"><i class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-analytics.html"><i class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+        <!-- Hero -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+          <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
+            <div>
+              <h1 class="h2 fw-bold mb-0"><span class="gradient-text">Comments &amp; Reviews</span></h1>
+              <p class="text-light opacity-75 mb-0 small mt-1">See what your readers are saying about your work.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-outline-light btn-sm fw-semibold px-3"><i class="ph-bold ph-funnel me-1"></i>Filter</button>
+              <button class="btn btn-primary-custom fw-bold shadow-sm px-4"><i class="ph-bold ph-check-circle me-1"></i>Mark All Read</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3 bg-white rounded-3">
+              <div class="fs-2 fw-bold text-primary">8,500</div>
+              <div class="text-muted small text-uppercase fw-semibold">Total Comments</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3 bg-white rounded-3">
+              <div class="fs-2 fw-bold text-danger">47</div>
+              <div class="text-muted small text-uppercase fw-semibold">Unread</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3 bg-white rounded-3">
+              <div class="fs-2 fw-bold text-warning">4.8 <span style="font-size:1rem">★</span></div>
+              <div class="text-muted small text-uppercase fw-semibold">Avg Rating</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card border-0 shadow-sm text-center py-3 bg-white rounded-3">
+              <div class="fs-2 fw-bold text-success">94%</div>
+              <div class="text-muted small text-uppercase fw-semibold">Positive</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button class="tab-pill active">All Comments</button>
+          <button class="tab-pill">Unread <span class="badge bg-danger ms-1">47</span></button>
+          <button class="tab-pill">Reviews</button>
+          <button class="tab-pill">Mentions</button>
+          <div class="ms-auto">
+            <input class="form-control form-control-sm" placeholder="Search comments…" style="max-width:200px" type="search">
+          </div>
+        </div>
+
+        <!-- Comments List -->
+        <div class="d-flex flex-column gap-3">
+
+          <!-- Comment 1 – Unread -->
+          <div class="card comment-card border-0 shadow-sm bg-white p-3 p-md-4">
+            <div class="d-flex gap-3">
+              <img src="https://i.pravatar.cc/80?img=47" alt="StarlightLuna" class="reviewer-avatar">
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                  <div>
+                    <span class="fw-bold">StarlightLuna</span>
+                    <span class="unread-dot ms-2"></span>
+                    <span class="ms-2 text-muted small">on <a href="#" class="text-decoration-none text-primary">My Hero Journey</a> – Chapter 24</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div>
+                      <i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i>
+                    </div>
+                    <span class="text-muted small">2 hours ago</span>
+                  </div>
+                </div>
+                <p class="mt-2 mb-2 text-dark" style="line-height:1.6">This chapter absolutely WRECKED me emotionally 😭 The scene where Izuku finally faces his mentor is one of the best things I've read all year. Your character development is unreal. Please never stop writing this story! 🔥🔥</p>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="sentiment-positive">😊 Positive</span>
+                  <button class="reply-btn"><i class="ph-bold ph-arrow-bend-up-left me-1"></i>Reply</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-heart me-1"></i>Like (12)</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-flag me-1"></i>Flag</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment 2 – Unread -->
+          <div class="card comment-card border-0 shadow-sm bg-white p-3 p-md-4">
+            <div class="d-flex gap-3">
+              <img src="https://i.pravatar.cc/80?img=12" alt="DarkKnight92" class="reviewer-avatar">
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                  <div>
+                    <span class="fw-bold">DarkKnight92</span>
+                    <span class="unread-dot ms-2"></span>
+                    <span class="ms-2 text-muted small">on <a href="#" class="text-decoration-none text-primary">Magic Academy: Year One</a> – Chapter 38</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div>
+                      <i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-empty"></i>
+                    </div>
+                    <span class="text-muted small">5 hours ago</span>
+                  </div>
+                </div>
+                <p class="mt-2 mb-2 text-dark" style="line-height:1.6">I've been following this fic since chapter 3 and wow, what a journey. The plot twist in this chapter? Didn't see it coming at ALL. One minor thing – I wish we had a bit more resolution with the subplot about the stolen grimoire. Overall, brilliant work!</p>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="sentiment-positive">😊 Positive</span>
+                  <button class="reply-btn"><i class="ph-bold ph-arrow-bend-up-left me-1"></i>Reply</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-heart me-1"></i>Like (8)</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-flag me-1"></i>Flag</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment 3 – Read, with reply -->
+          <div class="card comment-card border-0 shadow-sm bg-white p-3 p-md-4">
+            <div class="d-flex gap-3">
+              <img src="https://i.pravatar.cc/80?img=23" alt="MoonRavenFics" class="reviewer-avatar">
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                  <div>
+                    <span class="fw-bold">MoonRavenFics</span>
+                    <span class="ms-2 text-muted small">on <a href="#" class="text-decoration-none text-primary">Cherry Blossoms &amp; Katanas</a> – Chapter 12</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div>
+                      <i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i>
+                    </div>
+                    <span class="text-muted small">Yesterday</span>
+                  </div>
+                </div>
+                <p class="mt-2 mb-2 text-dark" style="line-height:1.6">The tension in the battle scene was palpable! I was on the edge of my seat the whole time. The way you wrote the rain against the blades is simply poetic. This is becoming my favourite fic of the year. Update soon please! 🙏</p>
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <span class="sentiment-positive">😊 Positive</span>
+                  <button class="reply-btn"><i class="ph-bold ph-arrow-bend-up-left me-1"></i>Reply</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-heart me-1"></i>Like (31)</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-flag me-1"></i>Flag</button>
+                </div>
+                <!-- Your reply -->
+                <div class="d-flex gap-2 bg-light rounded-3 p-3 ms-2 ms-md-5">
+                  <img src="https://i.pravatar.cc/80?img=57" alt="You" style="width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #0d6efd;flex-shrink:0;">
+                  <div>
+                    <span class="fw-semibold text-primary small">You</span><span class="text-muted small ms-2">· 23 hours ago</span>
+                    <p class="mb-0 mt-1 small text-dark">Thank you so much MoonRaven!! 🥰 That scene took me a whole week to write. Chapter 13 is almost ready — expect it this weekend! 🌸</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comment 4 -->
+          <div class="card comment-card border-0 shadow-sm bg-white p-3 p-md-4">
+            <div class="d-flex gap-3">
+              <img src="https://i.pravatar.cc/80?img=33" alt="AnimNerd2025" class="reviewer-avatar">
+              <div class="flex-grow-1">
+                <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                  <div>
+                    <span class="fw-bold">AnimNerd2025</span>
+                    <span class="ms-2 text-muted small">on <a href="#" class="text-decoration-none text-primary">My Hero Journey</a> – Chapter 20</span>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div>
+                      <i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-filled"></i><i class="ph-fill ph-star star-empty"></i><i class="ph-fill ph-star star-empty"></i>
+                    </div>
+                    <span class="text-muted small">2 days ago</span>
+                  </div>
+                </div>
+                <p class="mt-2 mb-2 text-dark" style="line-height:1.6">Good story overall, but I felt chapter 20 was a bit slow paced. The emotional beats felt forced and the dialogue could be tighter. Not complaining too much — the world building is still top notch.</p>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="sentiment-neutral">😐 Neutral</span>
+                  <button class="reply-btn"><i class="ph-bold ph-arrow-bend-up-left me-1"></i>Reply</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-heart me-1"></i>Like (4)</button>
+                  <button class="reply-btn text-muted"><i class="ph-bold ph-flag me-1"></i>Flag</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Load More -->
+        <div class="text-center mt-4">
+          <button class="btn btn-outline-primary px-5 fw-semibold rounded-pill">Load More Comments</button>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.tab-pill').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

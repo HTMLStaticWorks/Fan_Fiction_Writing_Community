@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics | FanFicHub Writer Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .analytics-card { border-radius:14px; border:1px solid #f0f0f0; transition:transform .2s,box-shadow .2s; }
+    .analytics-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10)!important; }
+    .spark-bar { display:inline-block; border-radius:3px 3px 0 0; transition:height .3s; }
+    .top-story-rank { width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0; }
+    .progress-sm { height:6px; border-radius:10px; }
+    .geo-row:hover { background:#f8f9fa; }
+    .trend-up   { color:#198754; font-size:.8rem; }
+    .trend-down { color:#dc3545; font-size:.8rem; }
+    .linechart-svg { width:100%; height:80px; }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top bg-white border-bottom shadow-sm">
+    <div class="container-fluid px-3 px-md-4">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="ph-fill ph-book-open-text text-primary" style="font-size: 1.5rem;"></i>
+        <span class="ms-1">FanFicHub</span>
+      </a>
+      <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
+            <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+          </ul>
+        </div>
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+          <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid pb-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-end vh-100 py-3">
+        <div class="position-sticky sidebar-sticky">
+          <ul class="nav flex-column gap-2 px-2">
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-analytics.html"><i class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+        <!-- Hero -->
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+          <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
+          <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
+            <div>
+              <h1 class="h2 fw-bold mb-0"><span class="gradient-text">Analytics</span></h1>
+              <p class="text-light opacity-75 mb-0 small mt-1">Deep dive into your readership and engagement metrics.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <select class="form-select form-select-sm" style="max-width:140px">
+                <option>Last 30 days</option>
+                <option>Last 90 days</option>
+                <option>This Year</option>
+                <option>All Time</option>
+              </select>
+              <button class="btn btn-outline-light btn-sm fw-semibold px-3"><i class="ph-bold ph-download-simple me-1"></i>Export</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KPI Row -->
+        <div class="row g-3 mb-4">
+          <div class="col-6 col-md-3">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="ph-fill ph-eye text-primary fs-5"></i>
+                <span class="text-muted small fw-semibold">Total Views</span>
+              </div>
+              <div class="fs-2 fw-bold">238k</div>
+              <div class="trend-up"><i class="ph-fill ph-trend-up me-1"></i>+12% vs last period</div>
+              <!-- Sparkline bars -->
+              <div class="d-flex align-items-flex-end gap-1 mt-2" style="height:24px;align-items:flex-end">
+                <span class="spark-bar bg-primary bg-opacity-25" style="height:10px;width:8px"></span>
+                <span class="spark-bar bg-primary bg-opacity-25" style="height:14px;width:8px"></span>
+                <span class="spark-bar bg-primary bg-opacity-50" style="height:18px;width:8px"></span>
+                <span class="spark-bar bg-primary" style="height:22px;width:8px"></span>
+                <span class="spark-bar bg-primary" style="height:24px;width:8px"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="ph-fill ph-heart text-danger fs-5"></i>
+                <span class="text-muted small fw-semibold">Kudos</span>
+              </div>
+              <div class="fs-2 fw-bold">16k</div>
+              <div class="trend-up"><i class="ph-fill ph-trend-up me-1"></i>+8% vs last period</div>
+              <div class="d-flex align-items-flex-end gap-1 mt-2" style="height:24px;align-items:flex-end">
+                <span class="spark-bar" style="height:12px;width:8px;background:#f5576c;opacity:.3"></span>
+                <span class="spark-bar" style="height:16px;width:8px;background:#f5576c;opacity:.5"></span>
+                <span class="spark-bar" style="height:20px;width:8px;background:#f5576c;opacity:.7"></span>
+                <span class="spark-bar" style="height:22px;width:8px;background:#f5576c"></span>
+                <span class="spark-bar" style="height:24px;width:8px;background:#f5576c"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="ph-fill ph-users text-success fs-5"></i>
+                <span class="text-muted small fw-semibold">New Followers</span>
+              </div>
+              <div class="fs-2 fw-bold">+284</div>
+              <div class="trend-up"><i class="ph-fill ph-trend-up me-1"></i>+22% vs last period</div>
+              <div class="d-flex align-items-flex-end gap-1 mt-2" style="height:24px;align-items:flex-end">
+                <span class="spark-bar bg-success" style="height:8px;width:8px;opacity:.3"></span>
+                <span class="spark-bar bg-success" style="height:14px;width:8px;opacity:.5"></span>
+                <span class="spark-bar bg-success" style="height:18px;width:8px;opacity:.7"></span>
+                <span class="spark-bar bg-success" style="height:22px;width:8px"></span>
+                <span class="spark-bar bg-success" style="height:24px;width:8px"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-3 h-100">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <i class="ph-fill ph-timer text-warning fs-5"></i>
+                <span class="text-muted small fw-semibold">Avg Read Time</span>
+              </div>
+              <div class="fs-2 fw-bold">14 min</div>
+              <div class="trend-down"><i class="ph-fill ph-trend-down me-1"></i>-2 min vs last period</div>
+              <div class="d-flex align-items-flex-end gap-1 mt-2" style="height:24px;align-items:flex-end">
+                <span class="spark-bar" style="height:22px;width:8px;background:#f5a623;opacity:.5"></span>
+                <span class="spark-bar" style="height:20px;width:8px;background:#f5a623;opacity:.6"></span>
+                <span class="spark-bar" style="height:20px;width:8px;background:#f5a623;opacity:.7"></span>
+                <span class="spark-bar" style="height:18px;width:8px;background:#f5a623;opacity:.9"></span>
+                <span class="spark-bar" style="height:16px;width:8px;background:#f5a623"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <!-- Top Performing Stories -->
+          <div class="col-12 col-lg-6">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-4 h-100">
+              <h5 class="fw-bold mb-3">Top Stories by Views</h5>
+              <div class="d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="top-story-rank" style="background:linear-gradient(135deg,#f5a623,#f7971e);color:#fff">1</div>
+                  <div class="flex-grow-1">
+                    <div class="fw-semibold small">Magic Academy: Year One</div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar" style="width:100%;background:linear-gradient(to right,#6c63ff,#48cae4)"></div></div>
+                  </div>
+                  <div class="small fw-bold text-primary">120k</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="top-story-rank" style="background:#e0e0e0;color:#555">2</div>
+                  <div class="flex-grow-1">
+                    <div class="fw-semibold small">My Hero Journey</div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-primary" style="width:38%"></div></div>
+                  </div>
+                  <div class="small fw-bold text-primary">45k</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="top-story-rank" style="background:#ffe0b2;color:#e65100">3</div>
+                  <div class="flex-grow-1">
+                    <div class="fw-semibold small">Cherry Blossoms &amp; Katanas</div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-warning" style="width:27%"></div></div>
+                  </div>
+                  <div class="small fw-bold text-primary">32k</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="top-story-rank" style="background:#f1f1f1;color:#888">4</div>
+                  <div class="flex-grow-1">
+                    <div class="fw-semibold small">Echoes of Tomorrow</div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-secondary" style="width:18%"></div></div>
+                  </div>
+                  <div class="small fw-bold text-primary">21k</div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <div class="top-story-rank" style="background:#f1f1f1;color:#888">5</div>
+                  <div class="flex-grow-1">
+                    <div class="fw-semibold small">The Last Bender</div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-info" style="width:12%"></div></div>
+                  </div>
+                  <div class="small fw-bold text-primary">14k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reader Demographics / Geography -->
+          <div class="col-12 col-lg-6">
+            <div class="card analytics-card border-0 shadow-sm bg-white p-4 h-100">
+              <h5 class="fw-bold mb-3">Readers by Country</h5>
+              <div class="d-flex flex-column gap-2">
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🇺🇸</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United States</span><span class="text-muted">34%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-primary" style="width:34%"></div></div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🇬🇧</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United Kingdom</span><span class="text-muted">18%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-success" style="width:18%"></div></div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🇮🇳</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">India</span><span class="text-muted">14%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-warning" style="width:14%"></div></div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🇨🇦</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Canada</span><span class="text-muted">10%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-danger" style="width:10%"></div></div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🇦🇺</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Australia</span><span class="text-muted">8%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-info" style="width:8%"></div></div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
+                  <span style="font-size:1.3rem">🌍</span>
+                  <div class="flex-grow-1">
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Rest of World</span><span class="text-muted">16%</span></div>
+                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-secondary" style="width:16%"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Traffic Sources -->
+        <div class="card analytics-card border-0 shadow-sm bg-white p-4 mb-4">
+          <h5 class="fw-bold mb-3">Traffic Sources</h5>
+          <div class="row g-3">
+            <div class="col-6 col-md-3 text-center">
+              <div class="fs-3 fw-bold text-primary">52%</div>
+              <div class="small text-muted mt-1"><i class="ph-fill ph-magnifying-glass me-1"></i>Search Engines</div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="fs-3 fw-bold text-warning">28%</div>
+              <div class="small text-muted mt-1"><i class="ph-fill ph-share-network me-1"></i>Social Media</div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="fs-3 fw-bold text-success">13%</div>
+              <div class="small text-muted mt-1"><i class="ph-fill ph-link me-1"></i>Direct / Referral</div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="fs-3 fw-bold text-info">7%</div>
+              <div class="small text-muted mt-1"><i class="ph-fill ph-envelope-simple me-1"></i>Newsletter</div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <button id="backToTop" aria-label="Back to Top">↑</button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
