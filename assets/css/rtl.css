@@ -9,24 +9,50 @@
   padding-right: 0;
 }
 
-[dir="rtl"] .ms-auto {
+/* Margin & Padding Flipping */
+[dir="rtl"] .ms-0 { margin-left: 0 !important; margin-right: 0 !important; }
+[dir="rtl"] .ms-1 { margin-left: 0 !important; margin-right: 0.25rem !important; }
+[dir="rtl"] .ms-2 { margin-left: 0 !important; margin-right: 0.5rem !important; }
+[dir="rtl"] .ms-3 { margin-left: 0 !important; margin-right: 1rem !important; }
+[dir="rtl"] .ms-4 { margin-left: 0 !important; margin-right: 1.5rem !important; }
+[dir="rtl"] .ms-5 { margin-left: 0 !important; margin-right: 3rem !important; }
+[dir="rtl"] .ms-auto, [dir="rtl"] .ms-sm-auto, [dir="rtl"] .ms-md-auto, [dir="rtl"] .ms-lg-auto, [dir="rtl"] .ms-xl-auto {
   margin-left: 0 !important;
   margin-right: auto !important;
 }
 
-[dir="rtl"] .me-auto {
+[dir="rtl"] .me-0 { margin-right: 0 !important; margin-left: 0 !important; }
+[dir="rtl"] .me-1 { margin-right: 0 !important; margin-left: 0.25rem !important; }
+[dir="rtl"] .me-2 { margin-right: 0 !important; margin-left: 0.5rem !important; }
+[dir="rtl"] .me-3 { margin-right: 0 !important; margin-left: 1rem !important; }
+[dir="rtl"] .me-4 { margin-right: 0 !important; margin-left: 1.5rem !important; }
+[dir="rtl"] .me-5 { margin-right: 0 !important; margin-left: 3rem !important; }
+[dir="rtl"] .me-auto, [dir="rtl"] .me-sm-auto, [dir="rtl"] .me-md-auto, [dir="rtl"] .me-lg-auto, [dir="rtl"] .me-xl-auto {
   margin-right: 0 !important;
   margin-left: auto !important;
 }
 
-[dir="rtl"] .me-3 {
-  margin-right: 0 !important;
-  margin-left: 1rem !important;
-}
+[dir="rtl"] .ps-0 { padding-left: 0 !important; padding-right: 0 !important; }
+[dir="rtl"] .ps-1 { padding-left: 0 !important; padding-right: 0.25rem !important; }
+[dir="rtl"] .ps-2 { padding-left: 0 !important; padding-right: 0.5rem !important; }
+[dir="rtl"] .ps-3 { padding-left: 0 !important; padding-right: 1rem !important; }
+[dir="rtl"] .ps-4 { padding-left: 0 !important; padding-right: 1.5rem !important; }
+[dir="rtl"] .ps-5 { padding-left: 0 !important; padding-right: 3rem !important; }
 
-[dir="rtl"] .ms-3 {
-  margin-left: 0 !important;
-  margin-right: 1rem !important;
+[dir="rtl"] .pe-0 { padding-right: 0 !important; padding-left: 0 !important; }
+[dir="rtl"] .pe-1 { padding-right: 0 !important; padding-left: 0.25rem !important; }
+[dir="rtl"] .pe-2 { padding-right: 0 !important; padding-left: 0.5rem !important; }
+[dir="rtl"] .pe-3 { padding-right: 0 !important; padding-left: 1rem !important; }
+[dir="rtl"] .pe-4 { padding-right: 0 !important; padding-left: 1.5rem !important; }
+[dir="rtl"] .pe-5 { padding-right: 0 !important; padding-left: 3rem !important; }
+
+/* Dropdowns */
+[dir="rtl"] .dropdown-menu-end {
+  right: auto !important;
+  left: 0 !important;
+}
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
 }
 
 [dir="rtl"] .text-start {
@@ -37,9 +63,14 @@
   text-align: left !important;
 }
 
-[dir="rtl"] .me-2 {
-  margin-right: 0 !important;
-  margin-left: 0.5rem !important;
+/* Sidebar RTL Positioning */
+@media (min-width: 768px) {
+  [dir="rtl"] .sidebar {
+    left: auto !important;
+    right: 0 !important;
+    border-right: none !important;
+    border-left: 1px solid var(--border-color) !important;
+  }
 }
 
 /* Form Check (Checkboxes & Radios) RTL Fixes */

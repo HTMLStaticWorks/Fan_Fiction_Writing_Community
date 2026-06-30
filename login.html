@@ -49,7 +49,19 @@
     .auth-toggles {
       position: absolute;
       top: 20px;
-      right: 20px;
+      inset-inline-end: 20px;
+    }
+    
+    [data-theme="dark"] .auth-toggles button {
+      background: rgba(15, 23, 42, 0.8) !important;
+      color: #f8fafc !important;
+      border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    
+    [data-theme="light"] .auth-toggles button {
+      background: rgba(255, 255, 255, 0.8) !important;
+      color: #0f172a !important;
+      border: 1px solid rgba(0, 0, 0, 0.1) !important;
     }
   </style>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -59,8 +71,8 @@
 
   <!-- Top Right Toggles -->
   <div class="auth-toggles d-flex gap-2">
-    <button id="themeToggle" class="btn btn-light shadow-sm btn-sm" aria-label="Toggle Theme" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(4px);"><i class="ph-fill ph-moon-stars"></i></button>
-    <button id="rtlToggle" class="btn btn-light shadow-sm btn-sm" aria-label="Toggle RTL" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(4px);"><i class="ph-bold ph-arrows-left-right"></i></button>
+    <button id="themeToggle" class="btn shadow-sm btn-sm" aria-label="Toggle Theme" style="backdrop-filter: blur(4px);"><i class="ph-fill ph-moon-stars"></i></button>
+    <button id="rtlToggle" class="btn shadow-sm btn-sm" aria-label="Toggle RTL" style="backdrop-filter: blur(4px);"><i class="ph-bold ph-arrows-left-right"></i></button>
   </div>
 
   <div class="auth-card text-center shadow-lg">

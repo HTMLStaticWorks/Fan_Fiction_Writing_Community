@@ -199,6 +199,16 @@ a:hover {
   height: 100%;
 }
 
+.card {
+  border: 1px solid var(--border-color) !important;
+}
+
+.theme-card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
 .story-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -232,12 +242,64 @@ a:hover {
   margin-top: 1.5rem;
 }
 
+/* Ensure all story cards in the explore grid are the exact same height */
+@media (min-width: 768px) {
+  #storyGrid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3rem;
+  }
+  #storyGrid > .col-md-6 {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
 /* Navigation */
 .navbar-custom {
   z-index: 1030 !important;
   background-color: var(--bg-card);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: background-color var(--transition-fast);
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-custom .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    z-index: 1040;
+    border-radius: 0 0 16px 16px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .navbar-custom .navbar-nav .nav-item {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-btn);
+  }
+
+  .navbar-custom .navbar-nav .nav-link:hover {
+    background-color: rgba(124, 58, 237, 0.05);
+  }
+
+  .navbar-custom .navbar-collapse > .d-flex {
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 0.75rem !important;
+  }
 }
 
 .navbar-brand,
@@ -258,6 +320,7 @@ a:hover {
 }
 
 .navbar-custom .nav-link.active,
+.navbar-custom .nav-link.show,
 .navbar-custom .nav-link:hover {
   color: var(--color-primary);
 }
@@ -275,8 +338,18 @@ a:hover {
 }
 
 .navbar-custom .nav-link.active::before,
+.navbar-custom .nav-link.show::before,
 .navbar-custom .nav-link:hover::before {
   width: 100%;
+}
+
+.dropdown-item {
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: var(--color-primary);
+  color: #fff !important;
 }
 
 .navbar-custom .dropdown-toggle::after {
@@ -308,6 +381,7 @@ a:hover {
   background-color: var(--bg-card);
   border-top: 1px solid var(--border-color);
   padding: 4rem 0 2rem;
+  text-align: start !important;
 }
 
 .footer-custom .footer-title {
@@ -331,6 +405,55 @@ a:hover {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+/* Standardize Action Buttons across all Dashboard pages */
+.table .btn,
+.story-card .btn,
+main .card .btn-outline-primary:not(.px-2),
+main .card .btn-primary:not(.px-2),
+main .card .btn-primary-custom:not(.px-2) {
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table .btn:not(.btn-light),
+.story-card .btn-outline-primary,
+.story-card .btn-primary,
+main .card .btn-outline-primary:not(.px-2),
+main .card .btn-primary:not(.px-2),
+main .card .btn-primary-custom:not(.px-2) {
+  min-width: 140px;
+}
+
+.table .btn.btn-light,
+.story-card .btn.btn-light,
+main .card .btn-light:not(.px-2) {
+  min-width: 80px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sidebar Fixed layout */
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed !important;
+    top: 76px !important; /* Adjust for navbar */
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 100 !important;
+    height: calc(100vh - 76px) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important; /* Scrollable contents if viewport is shorter than content. */
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
 }
 
 /* Back to Top */
@@ -394,6 +517,19 @@ a:hover {
   padding: 0.4em 0.8em;
   font-weight: 500;
   border-radius: 20px;
+}
+
+.badge-ongoing {
+  background-color: var(--color-primary);
+  color: #ffffff !important;
+}
+.badge-completed {
+  background-color: var(--color-success);
+  color: #ffffff !important;
+}
+.badge-draft {
+  background-color: var(--color-warning);
+  color: #ffffff !important;
 }
 
 /* Forms */
@@ -496,7 +632,7 @@ a:hover {
 }
 
 .gradient-text-light {
-  background: linear-gradient(135deg, #d8b4fe, #7dd3fc);
+  background: linear-gradient(135deg, #a855f7, #0ea5e9);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -542,4 +678,30 @@ i[class^="ph-"] {
 .navbar-toggler:focus {
   box-shadow: none;
   outline: none;
+}
+/* Hero section adjustments for tall/portrait screens */
+@media (orientation: portrait) and (min-width: 768px) {
+  section[style*="min-height: calc(100vh - 76px)"] {
+    min-height: 50vh !important;
+  }
+}
+
+/* Hover Effect for standard buttons */
+.btn-outline-primary, .btn-outline-secondary {
+  transition: all var(--transition-fast) !important;
+}
+.btn-outline-primary:hover, .btn-outline-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Action Buttons (Uniform Size) */
+.btn-dash-action {
+  min-width: 150px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 0 1rem;
 }
