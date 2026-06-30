@@ -299,3 +299,20 @@
 [data-theme="dark"] .team-card-overlay ~ .z-1 p {
   color: #ffffff !important;
 }
+
+/* Dark Mode: List Group (Messages) */
+[data-theme="dark"] .list-group-item {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}
+[data-theme="dark"] .list-group-item-action:hover,
+[data-theme="dark"] .list-group-item-action:focus {
+  background-color: #2a2b2f;
+  color: var(--text-main);
+}
+[data-theme="dark"] .list-group-item.active {
+  background-color: rgba(124, 58, 237, 0.15);
+  border-color: var(--border-color);
+  color: var(--text-main);
+}

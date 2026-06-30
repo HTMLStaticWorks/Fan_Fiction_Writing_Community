@@ -707,11 +707,15 @@ i[class^="ph-"] {
 
 /* Dashboard Action Buttons (Uniform Size) */
 .btn-dash-action {
-  min-width: 150px;
   height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   padding: 0 1rem;
+}
+
+.btn-dash-action.btn-primary-custom,
+.btn-dash-action.btn-outline-primary {
+  width: 170px !important;
 }
