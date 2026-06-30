@@ -11,6 +11,60 @@
   <link rel="stylesheet" href="assets/css/rtl.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /* Pagination Custom Hover Effect */
+    .pagination .page-item .page-link {
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 0 4px;
+      border: 1px solid var(--bs-border-color);
+      color: var(--bs-primary);
+    }
+    .pagination .page-item:not(.disabled) .page-link:hover {
+      background-color: var(--bs-primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border-color: var(--bs-primary);
+    }
+    .pagination .page-item.active .page-link {
+      background-color: var(--bs-primary);
+      color: #fff;
+      border-color: var(--bs-primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .pagination .page-item.disabled .page-link {
+      opacity: 0.6;
+    }
+    
+    /* Author Avatar Styling */
+    .author-item .card-img-top {
+      height: 160px !important;
+      width: 160px !important;
+      border-radius: 16px !important;
+      margin: 24px auto 0 !important;
+      object-fit: cover !important;
+      object-position: top center !important;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+      border: 4px solid var(--bs-body-bg) !important;
+    }
+    
+    /* Follow Button Styling */
+    .author-item .btn-outline-primary-custom {
+      color: var(--bs-primary);
+      border: 2px solid var(--bs-primary);
+      background-color: transparent;
+      transition: all 0.3s ease !important;
+      font-weight: 500;
+    }
+    .author-item .btn-outline-primary-custom:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15) !important;
+      background-color: var(--bs-primary) !important;
+      color: #fff !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -67,8 +121,8 @@
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
       <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
-        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text-light">Discover Authors</span></h1>
-        <p class="lead text-light  mx-auto" style="max-width: 600px; opacity: 0.7;">Follow talented writers and never miss a new chapter. Discover incredible storytellers who bring your favorite characters and immersive worlds to life in completely new and exciting ways.</p>
+        <h1 class="display-4 fw-bold mb-3"><span class="gradient-text-light">Discover Authors</span></h1>
+        <p class="lead text-light  mx-auto" style="max-width: 600px; opacity: 0.7; opacity: 0.7; opacity: 0.7; opacity: 0.7;">Follow talented writers and never miss a new chapter. Discover incredible storytellers who bring your favorite characters and immersive worlds to life in completely new and exciting ways.</p>
       </div>
     </div>
   </section>
@@ -76,9 +130,9 @@
   <!-- Authors Content -->
   <div class="container py-5">
     <div class="row g-4" id="authorsGrid">
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/odasensei.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/1.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Eiichiro Oda</h5>
@@ -99,9 +153,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/kishimatosensei.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/2.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Masashi Kishimoto</h5>
@@ -122,9 +176,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/stanlee.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/3.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Stan Lee</h5>
@@ -145,9 +199,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/Toriyamasensei.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/4.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Akira Toriyama</h5>
@@ -167,9 +221,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/jkr.jfif" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
+          <img src="assets/images/auth/5.png" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
             alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">J.K. Rowling</h5>
@@ -190,9 +244,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/stepheanking.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/6.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Stephen King</h5>
@@ -213,9 +267,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/Tolkie.jfif" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
+          <img src="assets/images/auth/7.png" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
             alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">J.R.R. Tolkien</h5>
@@ -236,9 +290,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/got.jfif" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
+          <img src="assets/images/auth/8.png" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
             alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">George R.R. Martin</h5>
@@ -259,9 +313,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/RickRiordan.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/9.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Rick Riordan</h5>
@@ -282,9 +336,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/Collins.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/10.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Suzanne Collins</h5>
@@ -305,9 +359,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/TiteKubo.jfif" class="card-img-top object-fit-cover"
+          <img src="assets/images/auth/11.png" class="card-img-top object-fit-cover"
             style="height: 200px; width: 100%;" alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Tite Kubo</h5>
@@ -328,9 +382,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-md-4 author-item">
+      <div class="col-12 col-sm-6 col-12 col-sm-6 col-md-4 author-item">
         <div class="card premium-hover card-custom h-100 border-0 shadow-sm text-center hover-lift overflow-hidden">
-          <img src="assets/images/Kohei.jfif" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
+          <img src="assets/images/auth/12.png" class="card-img-top object-fit-cover" style="height: 200px; width: 100%;"
             alt="Author Avatar">
           <div class="card-body d-flex flex-column pt-4">
             <h5 class="fw-bold mb-1">Kohei Horikoshi</h5>
@@ -365,16 +419,15 @@
   </div>
   </div>
   </div>
-
-    <footer class="footer-custom">
+  <footer class="footer-custom">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-4 col-md-6 text-start">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-start">
           <a class="navbar-brand mb-3 justify-content-start" href="index.html">
             <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
             FanFicHub
           </a>
-          <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+          <p class="text-muted"><bdi>Empowering writers to share their imagination with readers around the world.</bdi></p>
           <div class="d-flex gap-3 mt-4">
             <a href="#" class="text-muted hover-primary" aria-label="Facebook"><i class="ph-fill ph-facebook-logo fs-4"></i></a>
             <a href="#" class="text-muted hover-primary" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo fs-4"></i></a>
@@ -382,34 +435,33 @@
             <a href="#" class="text-muted hover-primary" aria-label="X"><i class="ph-fill ph-x-logo fs-4"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-6 text-start">
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-start">
           <h4 class="footer-title h6">Quick Links</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled p-0">
             <li class="mb-2"><a href="about.html">About Us</a></li>
             <li class="mb-2"><a href="blog.html">Community</a></li>
             <li class="mb-2"><a href="contact.html">Support</a></li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-6 text-start">
-          <h4 class="footer-title h6">Legal</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#">Privacy Policy</a></li>
-            <li class="mb-2"><a href="#">Terms of Service</a></li>
-            <li class="mb-2"><a href="#">Content Guidelines</a></li>
-            <li class="mb-2"><a href="#">Copyright & DMCA</a></li>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-start">
+          <h4 class="footer-title h6">Explore</h4>
+          <ul class="list-unstyled p-0">
+            <li class="mb-2"><a href="explore-stories.html">Top Stories</a></li>
+            <li class="mb-2"><a href="fandoms.html">Trending Fandoms</a></li>
+            <li class="mb-2"><a href="authors.html">Popular Authors</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6 text-start">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-start">
           <h4 class="footer-title h6">Newsletter</h4>
-          <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
+          <p class="text-muted small"><bdi>Subscribe to get the latest writing tips and updates.</bdi></p>
           <form class="d-flex flex-column flex-sm-row gap-2 needs-validation" novalidate>
-            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+            <input type="email" class="form-control form-control-custom" placeholder="Enter Email" required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
       <div class="bottom-bar">
-        &copy; 2026 FanFicHub. All rights reserved.
+        <bdi>&copy; 2026 FanFicHub. All rights reserved.</bdi>
       </div>
     </div>
   </footer>

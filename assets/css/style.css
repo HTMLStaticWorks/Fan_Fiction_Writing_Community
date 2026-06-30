@@ -238,8 +238,18 @@ a:hover {
   flex: 1;
 }
 
+.story-card-title {
+  color: var(--text-main);
+}
+
+.story-stats {
+  color: var(--text-muted);
+}
+
 .story-card-footer {
   margin-top: 1.5rem;
+  color: var(--text-muted);
+  border-color: var(--border-color) !important;
 }
 
 /* Ensure all story cards in the explore grid are the exact same height */

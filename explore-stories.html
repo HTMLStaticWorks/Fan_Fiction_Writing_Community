@@ -11,6 +11,33 @@
   <link rel="stylesheet" href="assets/css/rtl.css">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /* Pagination Custom Hover Effect */
+    .pagination .page-item .page-link {
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 0 4px;
+      border: 1px solid var(--bs-border-color);
+      color: var(--bs-primary);
+    }
+    .pagination .page-item:not(.disabled) .page-link:hover {
+      background-color: var(--bs-primary);
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      border-color: var(--bs-primary);
+    }
+    .pagination .page-item.active .page-link {
+      background-color: var(--bs-primary);
+      color: #fff;
+      border-color: var(--bs-primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    .pagination .page-item.disabled .page-link {
+      opacity: 0.6;
+    }
+  </style>
 </head>
 
 <body>
@@ -67,8 +94,8 @@
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
     <div class="container position-relative z-1 py-4">
       <div class="p-4 shadow-lg mx-auto" style="max-width: 800px;">
-        <h1 class="display-4 fw-bold text-white mb-3"><span class="gradient-text-light">Explore Stories</span></h1>
-        <p class="lead text-light  mx-auto" style="max-width: 600px; opacity: 0.7;">Dive into thousands of fan-created stories across your favorite universes. Find your next great read, from action-packed adventures to heartwarming romances, all written by our passionate community.</p>
+        <h1 class="display-4 fw-bold mb-3"><span class="gradient-text-light">Explore Stories</span></h1>
+        <p class="lead text-light  mx-auto" style="max-width: 600px; opacity: 0.7; opacity: 0.7; opacity: 0.7; opacity: 0.7;">Dive into thousands of fan-created stories across your favorite universes. Find your next great read, from action-packed adventures to heartwarming romances, all written by our passionate community.</p>
       </div>
     </div>
   </section>
@@ -77,7 +104,7 @@
   <div class="container py-5">
     <div class="row g-4">
       <!-- Filters Sidebar -->
-      <div class="col-lg-3">
+      <div class="col-lg-3 pe-lg-5">
         <button class="btn btn-primary-custom d-lg-none w-100 mb-3" type="button" data-bs-toggle="collapse"
           data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
           <i class="ph-bold ph-funnel me-2"></i> Show Filters
@@ -139,7 +166,7 @@
         <div class="row g-5" id="storyGrid">
 
           <div class="col-md-6 story-item" data-fandom="marvel">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/ironheart.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -164,7 +191,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="naruto">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/Shinobi.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -189,7 +216,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="starwars">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/starwars1.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -214,7 +241,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="dc">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/gothamcity.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -240,7 +267,7 @@
           </div>
 
           <div class="col-md-6 story-item" data-fandom="hp">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/ShadowHogwarts.jfif" class="img-fluid h-100 object-fit-cover"
@@ -267,7 +294,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="onepiece">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/golDrojers.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -292,7 +319,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="lotr">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/ShadowsMordor.jfif" class="img-fluid h-100 object-fit-cover"
@@ -319,7 +346,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="st">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/upsidedown.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -346,7 +373,7 @@
           </div>
 
           <div class="col-md-6 story-item" data-fandom="marvel">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/spiderman.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -371,7 +398,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="naruto">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/Sasuke.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -396,7 +423,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="starwars">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/starwars2.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -421,7 +448,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="dc">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/superman.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -447,7 +474,7 @@
           </div>
 
           <div class="col-md-6 story-item" data-fandom="hp">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/TheLastAuror.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -473,7 +500,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="onepiece">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/lastPoneglyph.webp" class="img-fluid h-100 object-fit-cover"
@@ -499,7 +526,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="lotr">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/elvenblade.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -525,7 +552,7 @@
             </div>
           </div>
           <div class="col-md-6 story-item" data-fandom="st">
-            <div class="card premium-hover card-custom h-100 border-0 shadow-sm hover-lift overflow-hidden">
+            <div class="card premium-hover card-custom border-0 shadow-sm hover-lift overflow-hidden" style="height: 260px;">
               <div class="row g-0 h-100">
                 <div class="col-4">
                   <img src="assets/images/labsecrets.jfif" class="img-fluid h-100 object-fit-cover" alt="Story Cover">
@@ -566,16 +593,15 @@
       </div>
     </div>
   </div>
-
-    <footer class="footer-custom">
+  <footer class="footer-custom">
     <div class="container">
       <div class="row g-4">
-        <div class="col-lg-4 col-md-6 text-start">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-start">
           <a class="navbar-brand mb-3 justify-content-start" href="index.html">
             <i class="ph-fill ph-book-open-text me-2 text-primary" style="font-size: 1.5rem;"></i>
             FanFicHub
           </a>
-          <p class="text-muted">Empowering writers to share their imagination with readers around the world.</p>
+          <p class="text-muted"><bdi>Empowering writers to share their imagination with readers around the world.</bdi></p>
           <div class="d-flex gap-3 mt-4">
             <a href="#" class="text-muted hover-primary" aria-label="Facebook"><i class="ph-fill ph-facebook-logo fs-4"></i></a>
             <a href="#" class="text-muted hover-primary" aria-label="LinkedIn"><i class="ph-fill ph-linkedin-logo fs-4"></i></a>
@@ -583,34 +609,33 @@
             <a href="#" class="text-muted hover-primary" aria-label="X"><i class="ph-fill ph-x-logo fs-4"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-6 text-start">
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-start">
           <h4 class="footer-title h6">Quick Links</h4>
-          <ul class="list-unstyled">
+          <ul class="list-unstyled p-0">
             <li class="mb-2"><a href="about.html">About Us</a></li>
             <li class="mb-2"><a href="blog.html">Community</a></li>
             <li class="mb-2"><a href="contact.html">Support</a></li>
           </ul>
         </div>
-        <div class="col-lg-2 col-md-6 text-start">
-          <h4 class="footer-title h6">Legal</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="#">Privacy Policy</a></li>
-            <li class="mb-2"><a href="#">Terms of Service</a></li>
-            <li class="mb-2"><a href="#">Content Guidelines</a></li>
-            <li class="mb-2"><a href="#">Copyright & DMCA</a></li>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0 text-start">
+          <h4 class="footer-title h6">Explore</h4>
+          <ul class="list-unstyled p-0">
+            <li class="mb-2"><a href="explore-stories.html">Top Stories</a></li>
+            <li class="mb-2"><a href="fandoms.html">Trending Fandoms</a></li>
+            <li class="mb-2"><a href="authors.html">Popular Authors</a></li>
           </ul>
         </div>
-        <div class="col-lg-4 col-md-6 text-start">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0 text-start">
           <h4 class="footer-title h6">Newsletter</h4>
-          <p class="text-muted small">Subscribe to get the latest writing tips and updates.</p>
+          <p class="text-muted small"><bdi>Subscribe to get the latest writing tips and updates.</bdi></p>
           <form class="d-flex flex-column flex-sm-row gap-2 needs-validation" novalidate>
-            <input type="email" class="form-control form-control-custom" placeholder="Your email address" required>
+            <input type="email" class="form-control form-control-custom" placeholder="Enter Email" required>
             <button class="btn btn-primary-custom" type="submit">Subscribe</button>
           </form>
         </div>
       </div>
       <div class="bottom-bar">
-        &copy; 2026 FanFicHub. All rights reserved.
+        <bdi>&copy; 2026 FanFicHub. All rights reserved.</bdi>
       </div>
     </div>
   </footer>

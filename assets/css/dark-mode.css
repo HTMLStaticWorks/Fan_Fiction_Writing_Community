@@ -229,3 +229,73 @@
   background-color: rgba(13, 110, 253, 0.2) !important;
   color: #6ea8fe !important;
 }
+
+/* Dark Mode: Ensure all general text is visible */
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] li,
+[data-theme="dark"] label,
+[data-theme="dark"] .fw-bold,
+[data-theme="dark"] .small,
+[data-theme="dark"] small {
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .text-body {
+  color: var(--text-main) !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Dark Mode: Fix bg-white sections */
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-main) !important;
+}
+
+/* Dark Mode: Fix Fandom cards that use bg-white */
+[data-theme="dark"] .dark-bg-dark {
+  background-color: var(--bg-card) !important;
+}
+
+/* Dark mode: text-white stays white everywhere */
+[data-theme="dark"] .text-white {
+  color: #ffffff !important;
+}
+
+/* Dark mode: text-white-50 stays half-white on dark backgrounds */
+[data-theme="dark"] .bg-dark .text-white-50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Dark mode: Ensure gradient/primary bg sections keep white text */
+[data-theme="dark"] .gradient-bg h2,
+[data-theme="dark"] .gradient-bg p,
+[data-theme="dark"] .gradient-bg span,
+[data-theme="dark"] .bg-primary-custom h2,
+[data-theme="dark"] .bg-primary-custom p,
+[data-theme="dark"] .bg-primary-custom span {
+  color: #ffffff !important;
+}
+
+/* Dark mode: hero overlay text stays white */
+[data-theme="dark"] .hero-section p,
+[data-theme="dark"] .hero-section span,
+[data-theme="dark"] .hero-section .text-light {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Dark mode: hero sections on other pages (position-relative with bg overlay) */
+[data-theme="dark"] section.text-white p,
+[data-theme="dark"] section.text-white span,
+[data-theme="dark"] section.text-white h1,
+[data-theme="dark"] section.text-white h2 {
+  color: #ffffff !important;
+}
+
+/* Dark mode: team card overlay text stays white */
+[data-theme="dark"] .team-card-overlay ~ .z-1 h4,
+[data-theme="dark"] .team-card-overlay ~ .z-1 p {
+  color: #ffffff !important;
+}
