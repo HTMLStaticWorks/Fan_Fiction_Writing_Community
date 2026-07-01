@@ -3,17 +3,43 @@
    ========================================================================== */
 [data-theme="dark"] {
   /* Layout Colors - Dark Mode */
-  --bg-main: #121212;
-  --bg-card: #1e1e1e;
+  --bg-main: #000000;
+  --bg-card: #121212;
   --text-main: #e0e0e0;
   --text-muted: #a0a0a0;
-  --border-color: #333333;
+  --border-color: #222222;
+  --bs-border-color: #222222;
   --bs-body-color: var(--text-main);
   --bs-body-bg: var(--bg-main);
   --bs-card-color: var(--text-main);
 }
 
 [data-theme="dark"] body {
+  color: var(--text-main) !important;
+  background-color: var(--bg-main) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .card.bg-white,
+[data-theme="dark"] .card.bg-light {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="dark"] .border,
+[data-theme="dark"] .border-top,
+[data-theme="dark"] .border-bottom,
+[data-theme="dark"] .border-start,
+[data-theme="dark"] .border-end,
+[data-theme="dark"] hr,
+[data-theme="dark"] .dropdown-divider {
+  border: none !important;
+  border-color: transparent !important;
+}
+
+[data-theme="dark"] .input-group-text {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
   color: var(--text-main) !important;
 }
 
@@ -29,6 +55,9 @@
   background-color: var(--bg-main);
   border-color: var(--border-color);
   color: var(--text-main);
+}
+[data-theme="dark"] .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
 }
 [data-theme="dark"] .form-control:focus,
 [data-theme="dark"] .form-select:focus,
@@ -316,3 +345,18 @@
   border-color: var(--border-color);
   color: var(--text-main);
 }
+
+/* Settings Sidebar Navigation in Dark Mode */
+[data-theme="dark"] .settings-nav-link:not(.text-danger) {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .settings-nav-link:not(.text-danger):hover {
+  color: var(--color-primary) !important;
+  background: rgba(13, 110, 253, 0.08) !important;
+}
+[data-theme="dark"] .settings-nav-link.active:not(.text-danger) {
+  color: var(--color-primary) !important;
+  background: rgba(13, 110, 253, 0.15) !important;
+  font-weight: 600;
+}
+

@@ -502,6 +502,11 @@ main .card .btn-light:not(.px-2) {
   position: relative;
 }
 
+.sidebar .nav-link {
+  display: flex !important;
+  align-items: center !important;
+}
+
 /* Back to Top */
 #backToTop {
   position: fixed;
