@@ -402,10 +402,46 @@ a:hover {
 
 .footer-custom a {
   color: var(--text-muted);
+  transition: color var(--transition-fast), padding-left var(--transition-fast);
+  display: inline-block;
 }
 
 .footer-custom a:hover {
   color: var(--color-primary);
+  padding-left: 6px;
+}
+
+/* Ensure the navbar brand and logo link do not slide on hover */
+.footer-custom a.navbar-brand {
+  display: flex !important;
+  transition: color var(--transition-fast);
+}
+
+.footer-custom a.navbar-brand:hover {
+  padding-left: 0 !important;
+}
+
+/* Social icons hover effects */
+.footer-custom .d-flex.gap-3.mt-4 a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: all var(--transition-fast) !important;
+}
+
+.footer-custom .d-flex.gap-3.mt-4 a:hover {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+  border-color: var(--color-primary);
+  padding-left: 0 !important; /* prevent shifting for social icons */
 }
 
 .bottom-bar {
@@ -953,4 +989,110 @@ i[class^="ph-"] {
     margin: 0 auto !important;
     width: 170px !important;
   }
+}
+
+/* Premium CTA Button Styles */
+.btn-cta-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  color: var(--color-primary) !important;
+  border: none;
+  border-radius: 50px;
+  padding: 0.85rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-cta-premium:hover {
+  background-color: #ffffff;
+  color: var(--color-primary-hover) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25), 0 12px 30px rgba(124, 58, 237, 0.35);
+}
+
+.btn-cta-premium:active {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-cta-premium i {
+  transition: transform 0.3s ease;
+}
+
+.btn-cta-premium:hover i {
+  transform: translateX(4px);
+}
+
+/* Story Item Cards styling - prevents content overflow/clipping of chapter and like icons */
+.story-item .card-custom {
+  min-height: 260px;
+  height: 100%;
+}
+
+/* Premium Social Buttons - Contact Page */
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  color: var(--text-muted) !important;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+}
+
+.social-icon-btn i {
+  font-size: 1.2rem;
+  transition: transform 0.35s ease;
+}
+
+.social-icon-btn:hover {
+  color: #ffffff !important;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon-btn:hover i {
+  transform: scale(1.1);
+}
+
+/* Brand specific colors and shadows on hover */
+.social-icon-btn[aria-label="Facebook"]:hover {
+  background-color: #1877f2;
+  border-color: #1877f2;
+  box-shadow: 0 8px 20px rgba(24, 119, 242, 0.3);
+}
+
+.social-icon-btn[aria-label="LinkedIn"]:hover {
+  background-color: #0077b5;
+  border-color: #0077b5;
+  box-shadow: 0 8px 20px rgba(0, 119, 181, 0.3);
+}
+
+.social-icon-btn[aria-label="Instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(214, 36, 159, 0.3);
+}
+
+.social-icon-btn[aria-label="X"]:hover {
+  background-color: #0f172a;
+  border-color: #0f172a;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+[data-theme="dark"] .social-icon-btn[aria-label="X"]:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000 !important;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.35);
 }
