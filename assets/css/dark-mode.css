@@ -360,3 +360,12 @@
   font-weight: 600;
 }
 
+/* Ensure brand color remains the same in dark theme as in bright theme */
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .navbar-brand span,
+[data-theme="dark"] .sidebar-brand,
+[data-theme="dark"] .sidebar-brand span {
+  color: var(--color-primary) !important;
+}
+
+

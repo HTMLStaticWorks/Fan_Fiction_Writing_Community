@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,30 +12,115 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
-    .story-card { border-radius: 16px; transition: transform .2s, box-shadow .2s; border: 1px solid #ececec; }
-    .story-card:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,0,0,.11)!important; }
-    /* Cover: full-width banner on mobile, fixed side panel on desktop */
-    .story-cover-lg { width:100%; min-height:160px; }
-    @media (min-width:768px) {
-      .story-cover-lg { width:220px !important; min-height:unset; }
+    .story-card {
+      border-radius: 16px;
+      transition: transform .2s, box-shadow .2s;
+      border: 1px solid #ececec;
     }
-    .badge-ongoing  { background: rgba(25,135,84,.85); color:#fff !important; border:1px solid rgba(25,135,84,1); backdrop-filter: blur(4px); }
-    .badge-completed{ background: rgba(108,117,125,.85); color:#fff !important; border:1px solid rgba(108,117,125,1); backdrop-filter: blur(4px); }
-    .badge-draft    { background: rgba(255,193,7,.85); color:#000 !important; border:1px solid rgba(255,193,7,1); backdrop-filter: blur(4px); }
-    .badge-hiatus   { background: rgba(220,53,69,.85); color:#fff !important; border:1px solid rgba(220,53,69,1); backdrop-filter: blur(4px); }
-    .filter-pill { border-radius: 50px; font-size:.83rem; padding:.38rem 1.1rem; cursor:pointer; border:1px solid #dee2e6; background:#fff; transition: all .15s; font-weight:500; }
-    .filter-pill.active, .filter-pill:hover { background: var(--bs-primary); color:#fff; border-color: var(--bs-primary); }
-    .stat-mini { font-size:.79rem; color:#6c757d; }
-    .progress-thin { height: 5px; border-radius: 10px; }
+
+    .story-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, .11) !important;
+    }
+
+    /* Cover: full-width banner on mobile, fixed side panel on desktop */
+    .story-cover-lg {
+      width: 100%;
+      min-height: 160px;
+    }
+
+    @media (min-width:768px) {
+      .story-cover-lg {
+        width: 220px !important;
+        min-height: unset;
+      }
+    }
+
+    .badge-ongoing {
+      background: rgba(25, 135, 84, .85);
+      color: #fff !important;
+      border: 1px solid rgba(25, 135, 84, 1);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge-completed {
+      background: rgba(108, 117, 125, .85);
+      color: #fff !important;
+      border: 1px solid rgba(108, 117, 125, 1);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge-draft {
+      background: rgba(255, 193, 7, .85);
+      color: #000 !important;
+      border: 1px solid rgba(255, 193, 7, 1);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge-hiatus {
+      background: rgba(220, 53, 69, .85);
+      color: #fff !important;
+      border: 1px solid rgba(220, 53, 69, 1);
+      backdrop-filter: blur(4px);
+    }
+
+    .filter-pill {
+      border-radius: 50px;
+      font-size: .83rem;
+      padding: .38rem 1.1rem;
+      cursor: pointer;
+      border: 1px solid #dee2e6;
+      background: #fff;
+      transition: all .15s;
+      font-weight: 500;
+    }
+
+    .filter-pill.active,
+    .filter-pill:hover {
+      background: var(--bs-primary);
+      color: #fff;
+      border-color: var(--bs-primary);
+    }
+
+    .stat-mini {
+      font-size: .79rem;
+      color: #6c757d;
+    }
+
+    .progress-thin {
+      height: 5px;
+      border-radius: 10px;
+    }
+
     /* Inner info padding */
-    .story-info { padding: 1.25rem 1.5rem; }
-    @media (max-width:767px) { .story-info { padding: 1rem 1rem; } }
+    .story-info {
+      padding: 1.25rem 1.5rem;
+    }
+
+    @media (max-width:767px) {
+      .story-info {
+        padding: 1rem 1rem;
+      }
+    }
+
     /* Stats row breathe */
-    .story-stats { margin-top:.75rem; padding-top:.75rem; border-top:1px solid #f3f3f3; }
+    .story-stats {
+      margin-top: .75rem;
+      padding-top: .75rem;
+      border-top: 1px solid #f3f3f3;
+    }
+
     /* Filter bar */
-    .filter-bar { background:#fff; border-radius:12px; padding:.75rem 1rem; box-shadow:0 1px 6px rgba(0,0,0,.05); margin-bottom:1.25rem; }
+    .filter-bar {
+      background: #fff;
+      border-radius: 12px;
+      padding: .75rem 1rem;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, .05);
+      margin-bottom: 1.25rem;
+    }
   </style>
 </head>
+
 <body class="bg-light">
 
   <!-- Header -->
@@ -45,20 +131,30 @@
         <span class="ms-1">FanFicHub</span>
       </a>
       <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
-        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
-        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i
+            class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i
+            class="ph-bold ph-arrows-left-right fs-5"></i></button>
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#"
+            class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white"
+            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
             <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to
+                User</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign
+                out</a></li>
           </ul>
         </div>
-        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button"
+          data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+          aria-label="Toggle sidebar">
           <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
         </button>
       </div>
@@ -77,8 +173,9 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-stories.html">
-                <i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories
+              <a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page"
+                href="writer-stories.html">
+                <i class="ph-fill ph-pencil-simple-line me-2"></i>My Story
               </a>
             </li>
             <li class="nav-item">
@@ -108,7 +205,9 @@
       <!-- Main Content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
         <!-- Hero Banner -->
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden"
+          style="background: url('assets/images/fandoms-bg.png') center/cover;">
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
           <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
             <div>
@@ -157,7 +256,8 @@
           <button class="filter-pill" onclick="filterStories(this,'completed')">Completed</button>
           <button class="filter-pill" onclick="filterStories(this,'draft')">Draft</button>
           <div class="ms-auto d-flex gap-2 flex-wrap">
-            <input class="form-control form-control-sm" style="max-width:200px" placeholder="Search stories…" type="search" id="storySearch">
+            <input class="form-control form-control-sm" style="max-width:200px" placeholder="Search stories…"
+              type="search" id="storySearch">
             <select class="form-select form-select-sm" style="max-width:160px">
               <option>Sort: Latest</option>
               <option>Sort: Most Views</option>
@@ -176,11 +276,18 @@
               <!-- Mobile: cover banner on top | Desktop: left side -->
               <div class="d-flex flex-column flex-md-row">
                 <!-- Cover Art -->
-                <div class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative" style="background:linear-gradient(135deg,#6c63ff 0%,#48cae4 100%); min-height:140px; width:100%; max-width:100%;" id="cover-mha">
-                  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:url('https://picsum.photos/seed/mha-hero/400/300') center/cover no-repeat; opacity:.55;"></div>
+                <div
+                  class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative"
+                  style="background:linear-gradient(135deg,#6c63ff 0%,#48cae4 100%); min-height:140px; width:100%; max-width:100%;"
+                  id="cover-mha">
+                  <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background:url('https://picsum.photos/seed/mha-hero/400/300') center/cover no-repeat; opacity:.55;">
+                  </div>
                   <div class="position-relative text-center p-3">
                     <div style="font-size:3rem;line-height:1;">📖</div>
-                    <div class="fw-bold text-white mt-1" style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">MY HERO ACADEMIA</div>
+                    <div class="fw-bold text-white mt-1"
+                      style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">MY HERO ACADEMIA
+                    </div>
                   </div>
                   <span class="badge rounded-pill badge-ongoing position-absolute top-0 end-0 m-2">Ongoing</span>
                 </div>
@@ -189,23 +296,30 @@
                   <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
                     <div>
                       <h5 class="fw-bold mb-0">My Hero Journey</h5>
-                      <div class="small text-muted mb-1">Fandom: My Hero Academia &nbsp;·&nbsp; Adventure / Romance</div>
+                      <div class="small text-muted mb-1">Fandom: My Hero Academia &nbsp;·&nbsp; Adventure / Romance
+                      </div>
                     </div>
                     <div class="d-flex gap-2 flex-shrink-0">
                       <button class="btn btn-outline-primary fw-semibold btn-dash-action">Update Chapter</button>
                       <button class="btn btn-light btn-dash-action">Edit</button>
                       <div class="dropdown">
-                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i class="ph-bold ph-dots-three-vertical"></i></button>
+                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i
+                            class="ph-bold ph-dots-three-vertical"></i></button>
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="#"><i class="ph-fill ph-eye me-2"></i>Preview</a></li>
-                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="#"><i class="ph-fill ph-trash me-2"></i>Delete</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a>
+                          </li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item text-danger" href="#"><i
+                                class="ph-fill ph-trash me-2"></i>Delete</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <p class="small text-muted mt-2 mb-2">Izuku Midoriya discovers a hidden quirk that changes everything. A tale of growth, friendship, and finding one's true power in a world full of heroes.</p>
+                  <p class="small text-muted mt-2 mb-2">Izuku Midoriya discovers a hidden quirk that changes everything.
+                    A tale of growth, friendship, and finding one's true power in a world full of heroes.</p>
                   <div class="d-flex flex-wrap gap-3 story-stats">
                     <span class="stat-mini"><i class="ph-fill ph-eye me-1"></i>45,200 views</span>
                     <span class="stat-mini"><i class="ph-fill ph-heart text-danger me-1"></i>2,100 kudos</span>
@@ -215,8 +329,11 @@
                     <span class="stat-mini text-muted">Updated 2 hours ago</span>
                   </div>
                   <div class="mt-3 pb-1">
-                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter progress</span><span>24 chapters</span></div>
-                    <div class="progress progress-thin"><div class="progress-bar bg-primary" style="width:60%"></div></div>
+                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter
+                        progress</span><span>24 chapters</span></div>
+                    <div class="progress progress-thin">
+                      <div class="progress-bar bg-primary" style="width:60%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -227,11 +344,17 @@
           <div class="col-12 story-item" data-status="completed">
             <div class="card story-card border-0 shadow-sm bg-white overflow-hidden">
               <div class="d-flex flex-column flex-md-row">
-                <div class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative" style="background:linear-gradient(135deg,#f7971e 0%,#ffd200 100%); min-height:140px; width:100%; max-width:100%;">
-                  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:url('https://picsum.photos/seed/hogwarts-magic/400/300') center/cover no-repeat; opacity:.50;"></div>
+                <div
+                  class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative"
+                  style="background:linear-gradient(135deg,#f7971e 0%,#ffd200 100%); min-height:140px; width:100%; max-width:100%;">
+                  <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background:url('https://picsum.photos/seed/hogwarts-magic/400/300') center/cover no-repeat; opacity:.50;">
+                  </div>
                   <div class="position-relative text-center p-3">
                     <div style="font-size:3rem;line-height:1;">⚡</div>
-                    <div class="fw-bold text-white mt-1" style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">HARRY POTTER</div>
+                    <div class="fw-bold text-white mt-1"
+                      style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">HARRY POTTER
+                    </div>
                   </div>
                   <span class="badge rounded-pill badge-completed position-absolute top-0 end-0 m-2">Completed</span>
                 </div>
@@ -242,20 +365,27 @@
                       <div class="small text-muted mb-1">Fandom: Harry Potter &nbsp;·&nbsp; Fantasy / Mystery</div>
                     </div>
                     <div class="d-flex gap-2 flex-shrink-0">
-                      <button class="btn btn-outline-primary fw-semibold btn-dash-action" disabled>Update Chapter</button>
+                      <button class="btn btn-outline-primary fw-semibold btn-dash-action" disabled>Update
+                        Chapter</button>
                       <button class="btn btn-light btn-dash-action">Edit</button>
                       <div class="dropdown">
-                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i class="ph-bold ph-dots-three-vertical"></i></button>
+                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i
+                            class="ph-bold ph-dots-three-vertical"></i></button>
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="#"><i class="ph-fill ph-eye me-2"></i>Preview</a></li>
-                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="#"><i class="ph-fill ph-trash me-2"></i>Delete</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a>
+                          </li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item text-danger" href="#"><i
+                                class="ph-fill ph-trash me-2"></i>Delete</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <p class="small text-muted mt-2 mb-2">A fresh perspective on the Boy Who Lived's first year, exploring untold friendships, darker corridors of Hogwarts, and a mystery that no one anticipated.</p>
+                  <p class="small text-muted mt-2 mb-2">A fresh perspective on the Boy Who Lived's first year, exploring
+                    untold friendships, darker corridors of Hogwarts, and a mystery that no one anticipated.</p>
                   <div class="d-flex flex-wrap gap-3 story-stats">
                     <span class="stat-mini"><i class="ph-fill ph-eye me-1"></i>120,000 views</span>
                     <span class="stat-mini"><i class="ph-fill ph-heart text-danger me-1"></i>9,800 kudos</span>
@@ -265,8 +395,11 @@
                     <span class="stat-mini text-muted">Oct 12, 2025</span>
                   </div>
                   <div class="mt-3 pb-1">
-                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter progress</span><span>40 / 40 chapters</span></div>
-                    <div class="progress progress-thin"><div class="progress-bar bg-success" style="width:100%"></div></div>
+                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter
+                        progress</span><span>40 / 40 chapters</span></div>
+                    <div class="progress progress-thin">
+                      <div class="progress-bar bg-success" style="width:100%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -277,11 +410,16 @@
           <div class="col-12 story-item" data-status="draft">
             <div class="card story-card border-0 shadow-sm bg-white overflow-hidden">
               <div class="d-flex flex-column flex-md-row">
-                <div class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative" style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); min-height:140px; width:100%; max-width:100%;">
-                  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:url('https://picsum.photos/seed/shadows-dark/400/300') center/cover no-repeat; opacity:.40;"></div>
+                <div
+                  class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative"
+                  style="background:linear-gradient(135deg,#a8edea 0%,#fed6e3 100%); min-height:140px; width:100%; max-width:100%;">
+                  <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background:url('https://picsum.photos/seed/shadows-dark/400/300') center/cover no-repeat; opacity:.40;">
+                  </div>
                   <div class="position-relative text-center p-3">
                     <div style="font-size:3rem;line-height:1;">🌙</div>
-                    <div class="fw-bold mt-1" style="font-size:.85rem;letter-spacing:.5px;color:#555">ORIGINAL WORK</div>
+                    <div class="fw-bold mt-1" style="font-size:.85rem;letter-spacing:.5px;color:#555">ORIGINAL WORK
+                    </div>
                   </div>
                   <span class="badge rounded-pill badge-draft position-absolute top-0 end-0 m-2">Draft</span>
                 </div>
@@ -295,25 +433,34 @@
                       <button class="btn btn-primary-custom fw-bold btn-dash-action">Publish</button>
                       <button class="btn btn-light btn-dash-action">Edit</button>
                       <div class="dropdown">
-                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i class="ph-bold ph-dots-three-vertical"></i></button>
+                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i
+                            class="ph-bold ph-dots-three-vertical"></i></button>
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="#"><i class="ph-fill ph-eye me-2"></i>Preview</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="#"><i class="ph-fill ph-trash me-2"></i>Delete</a></li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item text-danger" href="#"><i
+                                class="ph-fill ph-trash me-2"></i>Delete</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <p class="small text-muted mt-2 mb-2">In a world where memories can be stolen, one woman fights to reclaim her identity and uncover the conspiracy that erased her past.</p>
+                  <p class="small text-muted mt-2 mb-2">In a world where memories can be stolen, one woman fights to
+                    reclaim her identity and uncover the conspiracy that erased her past.</p>
                   <div class="d-flex flex-wrap gap-3 story-stats">
                     <span class="stat-mini text-muted"><i class="ph-fill ph-eye me-1"></i>Not published</span>
                     <span class="stat-mini"><i class="ph-fill ph-stack me-1"></i>3 chapters drafted</span>
-                    <span class="stat-mini text-warning fw-semibold"><i class="ph-fill ph-pencil me-1"></i>Ready to publish</span>
+                    <span class="stat-mini text-warning fw-semibold"><i class="ph-fill ph-pencil me-1"></i>Ready to
+                      publish</span>
                     <span class="stat-mini text-muted">Updated yesterday</span>
                   </div>
                   <div class="mt-3 pb-1">
-                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Draft progress</span><span>3 chapters</span></div>
-                    <div class="progress progress-thin"><div class="progress-bar bg-warning" style="width:15%"></div></div>
+                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Draft progress</span><span>3
+                        chapters</span></div>
+                    <div class="progress progress-thin">
+                      <div class="progress-bar bg-warning" style="width:15%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -324,11 +471,17 @@
           <div class="col-12 story-item" data-status="ongoing">
             <div class="card story-card border-0 shadow-sm bg-white overflow-hidden">
               <div class="d-flex flex-column flex-md-row">
-                <div class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative" style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%); min-height:140px; width:100%; max-width:100%;">
-                  <div class="position-absolute top-0 start-0 w-100 h-100" style="background:url('https://picsum.photos/seed/demon-slayer-cherry/400/300') center/cover no-repeat; opacity:.50;"></div>
+                <div
+                  class="story-cover-lg flex-shrink-0 d-flex align-items-center justify-content-center position-relative"
+                  style="background:linear-gradient(135deg,#f093fb 0%,#f5576c 100%); min-height:140px; width:100%; max-width:100%;">
+                  <div class="position-absolute top-0 start-0 w-100 h-100"
+                    style="background:url('https://picsum.photos/seed/demon-slayer-cherry/400/300') center/cover no-repeat; opacity:.50;">
+                  </div>
                   <div class="position-relative text-center p-3">
                     <div style="font-size:3rem;line-height:1;">🌸</div>
-                    <div class="fw-bold text-white mt-1" style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">DEMON SLAYER</div>
+                    <div class="fw-bold text-white mt-1"
+                      style="font-size:.85rem;letter-spacing:.5px;text-shadow:0 1px 4px rgba(0,0,0,.5)">DEMON SLAYER
+                    </div>
                   </div>
                   <span class="badge rounded-pill badge-ongoing position-absolute top-0 end-0 m-2">Ongoing</span>
                 </div>
@@ -342,17 +495,23 @@
                       <button class="btn btn-outline-primary fw-semibold btn-dash-action">Update Chapter</button>
                       <button class="btn btn-light btn-dash-action">Edit</button>
                       <div class="dropdown">
-                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i class="ph-bold ph-dots-three-vertical"></i></button>
+                        <button class="btn btn-light btn-dash-action" data-bs-toggle="dropdown"><i
+                            class="ph-bold ph-dots-three-vertical"></i></button>
                         <ul class="dropdown-menu dropdown-menu-end">
                           <li><a class="dropdown-item" href="#"><i class="ph-fill ph-eye me-2"></i>Preview</a></li>
-                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item text-danger" href="#"><i class="ph-fill ph-trash me-2"></i>Delete</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="ph-fill ph-share-network me-2"></i>Share</a>
+                          </li>
+                          <li>
+                            <hr class="dropdown-divider">
+                          </li>
+                          <li><a class="dropdown-item text-danger" href="#"><i
+                                class="ph-fill ph-trash me-2"></i>Delete</a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <p class="small text-muted mt-2 mb-2">Tanjiro meets an enigmatic female swordsman from a rival corps, sparking a bond that transcends duty and blossoms against the backdrop of war.</p>
+                  <p class="small text-muted mt-2 mb-2">Tanjiro meets an enigmatic female swordsman from a rival corps,
+                    sparking a bond that transcends duty and blossoms against the backdrop of war.</p>
                   <div class="d-flex flex-wrap gap-3 story-stats">
                     <span class="stat-mini"><i class="ph-fill ph-eye me-1"></i>32,100 views</span>
                     <span class="stat-mini"><i class="ph-fill ph-heart text-danger me-1"></i>4,500 kudos</span>
@@ -362,8 +521,11 @@
                     <span class="stat-mini text-muted">3 days ago</span>
                   </div>
                   <div class="mt-3 pb-1">
-                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter progress</span><span>16 chapters</span></div>
-                    <div class="progress progress-thin"><div class="progress-bar bg-primary" style="width:40%"></div></div>
+                    <div class="d-flex justify-content-between small text-muted mb-1"><span>Chapter
+                        progress</span><span>16 chapters</span></div>
+                    <div class="progress progress-thin">
+                      <div class="progress-bar bg-primary" style="width:40%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -393,7 +555,7 @@
         }
       });
     }
-    document.getElementById('storySearch').addEventListener('input', function() {
+    document.getElementById('storySearch').addEventListener('input', function () {
       const q = this.value.toLowerCase();
       document.querySelectorAll('.story-item').forEach(item => {
         const title = item.querySelector('h5').textContent.toLowerCase();
@@ -402,4 +564,5 @@
     });
   </script>
 </body>
+
 </html>

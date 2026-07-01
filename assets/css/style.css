@@ -968,6 +968,54 @@ i[class^="ph-"] {
   .table-responsive td {
     white-space: nowrap;
   }
+
+  /* Force the hamburger menu button to show on tablet/desktop up to 1100px */
+  .navbar button[data-bs-target="#sidebarMenu"],
+  .navbar-custom button[data-bs-target="#sidebarMenu"],
+  button[data-bs-target="#sidebarMenu"] {
+    display: inline-block !important;
+  }
+
+  /* Convert the sidebar into a mobile/tablet drawer overlay */
+  #sidebarMenu {
+    position: fixed !important;
+    top: 56px; /* Height of the sticky navbar */
+    left: 0;
+    width: 260px !important;
+    height: calc(100vh - 56px) !important;
+    z-index: 1040 !important;
+    margin: 0 !important;
+    background-color: var(--bg-card) !important;
+    border-right: 1px solid var(--border-color) !important;
+    transition: transform 0.3s ease-in-out !important;
+    display: block !important;
+    float: none !important;
+  }
+
+  /* Handle show/collapse state of the drawer */
+  #sidebarMenu.collapse:not(.show) {
+    transform: translateX(-100%);
+  }
+
+  #sidebarMenu.collapsing {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out !important;
+  }
+
+  #sidebarMenu.collapse.show {
+    transform: translateX(0);
+  }
+
+  /* Make main content expand to full width since sidebar is now fixed overlay */
+  main.col-md-9,
+  main.col-lg-10,
+  main[class*="col-md-"],
+  main[class*="col-lg-"] {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
 }
 
 /* Dashboard hero mobile adjustments */
@@ -1100,4 +1148,15 @@ i[class^="ph-"] {
   border-color: #ffffff;
   color: #000000 !important;
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.35);
+}
+
+/* Hero & Header Paragraph styling for better visibility and legibility */
+.hero-section p, 
+.coming-soon-section p,
+section[style*="background"] p.lead,
+section[style*="background-color: var(--bg-main)"] p.lead,
+section.position-relative.py-5.d-flex.align-items-center.text-center.text-white p.lead {
+  font-weight: 550 !important;
+  opacity: 0.95 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
 }

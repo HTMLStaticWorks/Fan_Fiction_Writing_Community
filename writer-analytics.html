@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +12,66 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
-    .analytics-card { border-radius:14px; border:1px solid #f0f0f0; transition:transform .2s,box-shadow .2s; }
-    .analytics-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,.10)!important; }
-    .spark-bar { display:inline-block; border-radius:3px 3px 0 0; transition:height .3s; }
-    .top-story-rank { width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0; }
-    .progress-sm { height:6px; border-radius:10px; }
-    .geo-row { transition: background 0.15s; cursor: default; }
-    .geo-row:hover { background: rgba(128,128,128,0.15) !important; }
-    .trend-up   { color:#198754; font-size:.8rem; }
-    .trend-down { color:#dc3545; font-size:.8rem; }
-    .linechart-svg { width:100%; height:80px; }
+    .analytics-card {
+      border-radius: 14px;
+      border: 1px solid #f0f0f0;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .analytics-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .10) !important;
+    }
+
+    .spark-bar {
+      display: inline-block;
+      border-radius: 3px 3px 0 0;
+      transition: height .3s;
+    }
+
+    .top-story-rank {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    .progress-sm {
+      height: 6px;
+      border-radius: 10px;
+    }
+
+    .geo-row {
+      transition: background 0.15s;
+      cursor: default;
+    }
+
+    .geo-row:hover {
+      background: rgba(128, 128, 128, 0.15) !important;
+    }
+
+    .trend-up {
+      color: #198754;
+      font-size: .8rem;
+    }
+
+    .trend-down {
+      color: #dc3545;
+      font-size: .8rem;
+    }
+
+    .linechart-svg {
+      width: 100%;
+      height: 80px;
+    }
   </style>
 </head>
+
 <body class="bg-light">
 
   <!-- Header -->
@@ -33,20 +82,29 @@
         <span class="ms-1">FanFicHub</span>
       </a>
       <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
-        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
-        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i
+            class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i
+            class="ph-bold ph-arrows-left-right fs-5"></i></button>
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#"
+            class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white"
+            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
             <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to
+                User</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign
+                out</a></li>
           </ul>
         </div>
-        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button"
+          data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
           <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
         </button>
       </div>
@@ -59,12 +117,19 @@
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-end vh-100 py-3">
         <div class="position-sticky sidebar-sticky">
           <ul class="nav flex-column gap-2 px-2">
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-analytics.html"><i class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i
+                  class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i
+                  class="ph-fill ph-pencil-simple-line me-2"></i>My Story</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i
+                  class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i
+                  class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded"
+                aria-current="page" href="writer-analytics.html"><i
+                  class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-settings.html"><i
+                  class="ph-fill ph-gear me-2"></i>Settings</a></li>
           </ul>
         </div>
       </nav>
@@ -72,7 +137,9 @@
       <!-- Main Content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
         <!-- Hero -->
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden"
+          style="background: url('assets/images/fandoms-bg.png') center/cover;">
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
           <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
             <div>
@@ -85,7 +152,8 @@
                 <option>This Year</option>
                 <option>All Time</option>
               </select>
-              <button class="btn btn-outline-light btn-sm fw-semibold px-3"><i class="ph-bold ph-download-simple me-1"></i>Export</button>
+              <button class="btn btn-outline-light btn-sm fw-semibold px-3"><i
+                  class="ph-bold ph-download-simple me-1"></i>Export</button>
             </div>
           </div>
         </div>
@@ -170,10 +238,14 @@
               <h5 class="fw-bold mb-3">Top Stories by Views</h5>
               <div class="d-flex flex-column gap-3">
                 <div class="d-flex align-items-center gap-3">
-                  <div class="top-story-rank" style="background:linear-gradient(135deg,#f5a623,#f7971e);color:#fff">1</div>
+                  <div class="top-story-rank" style="background:linear-gradient(135deg,#f5a623,#f7971e);color:#fff">1
+                  </div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold small">Magic Academy: Year One</div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar" style="width:100%;background:linear-gradient(to right,#6c63ff,#48cae4)"></div></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar" style="width:100%;background:linear-gradient(to right,#6c63ff,#48cae4)">
+                      </div>
+                    </div>
                   </div>
                   <div class="small fw-bold text-primary">120k</div>
                 </div>
@@ -181,7 +253,9 @@
                   <div class="top-story-rank" style="background:#e0e0e0;color:#555">2</div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold small">My Hero Journey</div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-primary" style="width:38%"></div></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-primary" style="width:38%"></div>
+                    </div>
                   </div>
                   <div class="small fw-bold text-primary">45k</div>
                 </div>
@@ -189,7 +263,9 @@
                   <div class="top-story-rank" style="background:#ffe0b2;color:#e65100">3</div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold small">Cherry Blossoms &amp; Katanas</div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-warning" style="width:27%"></div></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-warning" style="width:27%"></div>
+                    </div>
                   </div>
                   <div class="small fw-bold text-primary">32k</div>
                 </div>
@@ -197,7 +273,9 @@
                   <div class="top-story-rank" style="background:#f1f1f1;color:#888">4</div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold small">Echoes of Tomorrow</div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-secondary" style="width:18%"></div></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-secondary" style="width:18%"></div>
+                    </div>
                   </div>
                   <div class="small fw-bold text-primary">21k</div>
                 </div>
@@ -205,7 +283,9 @@
                   <div class="top-story-rank" style="background:#f1f1f1;color:#888">5</div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold small">The Last Bender</div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-info" style="width:12%"></div></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-info" style="width:12%"></div>
+                    </div>
                   </div>
                   <div class="small fw-bold text-primary">14k</div>
                 </div>
@@ -219,45 +299,69 @@
               <h5 class="fw-bold mb-3">Readers by Country</h5>
               <div class="d-flex flex-column gap-2">
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">US</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">US</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United States</span><span class="text-muted">34%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-primary" style="width:34%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United
+                        States</span><span class="text-muted">34%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-primary" style="width:34%"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">UK</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">UK</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United Kingdom</span><span class="text-muted">18%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-success" style="width:18%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">United
+                        Kingdom</span><span class="text-muted">18%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-success" style="width:18%"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">IN</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">IN</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">India</span><span class="text-muted">14%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-warning" style="width:14%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">India</span><span
+                        class="text-muted">14%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-warning" style="width:14%"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">CA</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">CA</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Canada</span><span class="text-muted">10%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-danger" style="width:10%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Canada</span><span
+                        class="text-muted">10%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-danger" style="width:10%"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">AU</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">AU</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Australia</span><span class="text-muted">8%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-info" style="width:8%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Australia</span><span
+                        class="text-muted">8%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-info" style="width:8%"></div>
+                    </div>
                   </div>
                 </div>
                 <div class="d-flex align-items-center gap-3 py-1 geo-row rounded-2 px-1">
-                  <span class="fw-bold text-muted" style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">🌍</span>
+                  <span class="fw-bold text-muted"
+                    style="font-size:1.1rem; width:28px; text-align:center; display:inline-block;">🌍</span>
                   <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Rest of World</span><span class="text-muted">16%</span></div>
-                    <div class="progress progress-sm mt-1"><div class="progress-bar bg-secondary" style="width:16%"></div></div>
+                    <div class="d-flex justify-content-between small"><span class="fw-semibold">Rest of
+                        World</span><span class="text-muted">16%</span></div>
+                    <div class="progress progress-sm mt-1">
+                      <div class="progress-bar bg-secondary" style="width:16%"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -296,4 +400,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

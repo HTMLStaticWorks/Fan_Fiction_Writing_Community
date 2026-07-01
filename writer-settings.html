@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,20 +12,104 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
-    .settings-section { border-radius:14px; border:1px solid #f0f0f0; }
-    .settings-nav-link { border-radius:10px; padding:.5rem 1rem; cursor:pointer; font-size:.9rem; color:#555; transition:all .15s; border:none; background:none; text-align:left; width:100%; display:flex; align-items:center; gap:.5rem; }
-    .settings-nav-link:hover,.settings-nav-link.active { background:rgba(13,110,253,.08); color:#0d6efd; font-weight:600; }
-    .avatar-ring { width:90px;height:90px;border-radius:50%;border:3px solid #0d6efd;object-fit:cover; }
-    .toggle-switch { position:relative;display:inline-block;width:44px;height:24px; }
-    .toggle-switch input { opacity:0;width:0;height:0; }
-    .toggle-slider { position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccc;border-radius:24px;transition:.3s; }
-    .toggle-slider:before { position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s; }
-    input:checked + .toggle-slider { background:#0d6efd; }
-    input:checked + .toggle-slider:before { transform:translateX(20px); }
-    .danger-zone { border:1.5px solid #dc3545!important; }
-    .section-icon { width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0; }
+    .settings-section {
+      border-radius: 14px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .settings-nav-link {
+      border-radius: 10px;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      font-size: .9rem;
+      color: #555;
+      transition: all .15s;
+      border: none;
+      background: none;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .settings-nav-link:hover,
+    .settings-nav-link.active {
+      background: rgba(13, 110, 253, .08);
+      color: #0d6efd;
+      font-weight: 600;
+    }
+
+    .avatar-ring {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #0d6efd;
+      object-fit: cover;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #ccc;
+      border-radius: 24px;
+      transition: .3s;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: .3s;
+    }
+
+    input:checked+.toggle-slider {
+      background: #0d6efd;
+    }
+
+    input:checked+.toggle-slider:before {
+      transform: translateX(20px);
+    }
+
+    .danger-zone {
+      border: 1.5px solid #dc3545 !important;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
   </style>
 </head>
+
 <body class="bg-light">
 
   <!-- Header -->
@@ -35,20 +120,29 @@
         <span class="ms-1">FanFicHub</span>
       </a>
       <div class="d-flex ms-auto gap-2 gap-md-3 align-items-center">
-        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i class="ph-fill ph-moon-stars fs-5"></i></button>
-        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i class="ph-bold ph-arrows-left-right fs-5"></i></button>
+        <button id="themeToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle Theme"><i
+            class="ph-fill ph-moon-stars fs-5"></i></button>
+        <button id="rtlToggle" class="btn btn-outline-secondary btn-sm border-0 px-1" aria-label="Toggle RTL"><i
+            class="ph-bold ph-arrows-left-right fs-5"></i></button>
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#"
+            class="d-flex align-items-center link-dark text-decoration-none border border-dark rounded px-1 py-1 bg-white"
+            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://i.pravatar.cc/80?img=57" alt="Writer" width="26" height="26" class="rounded-circle">
             <i class="ph-bold ph-caret-down ms-1" style="font-size: 0.8rem;"></i>
           </a>
           <ul class="dropdown-menu dropdown-menu-end text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to User</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign out</a></li>
+            <li><a class="dropdown-item" href="user-dashboard.html"><i class="ph-fill ph-user-switch me-2"></i>Switch to
+                User</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item text-danger" href="index.html"><i class="ph-bold ph-sign-out me-2"></i>Sign
+                out</a></li>
           </ul>
         </div>
-        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
+        <button class="btn text-dark p-0 border-0 d-md-none ms-1 text-decoration-none" type="button"
+          data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-expanded="false" aria-label="Toggle sidebar">
           <i class="ph-bold ph-list" style="font-size: 1.8rem;"></i>
         </button>
       </div>
@@ -61,12 +155,18 @@
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse border-end vh-100 py-3">
         <div class="position-sticky sidebar-sticky">
           <ul class="nav flex-column gap-2 px-2">
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i class="ph-fill ph-pencil-simple-line me-2"></i>My Stories</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
-            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-analytics.html"><i class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
-            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded" aria-current="page" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="dashboard.html"><i
+                  class="ph-fill ph-chart-bar me-2"></i>Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-stories.html"><i
+                  class="ph-fill ph-pencil-simple-line me-2"></i>My Story</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-comments.html"><i
+                  class="ph-fill ph-chat-centered-text me-2"></i>Comments &amp; Reviews</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-earnings.html"><i
+                  class="ph-fill ph-currency-circle-dollar me-2"></i>Earnings</a></li>
+            <li class="nav-item"><a class="nav-link text-body hover-lift rounded" href="writer-analytics.html"><i
+                  class="ph-fill ph-chart-line-up me-2"></i>Analytics</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-primary bg-primary bg-opacity-10 rounded"
+                aria-current="page" href="writer-settings.html"><i class="ph-fill ph-gear me-2"></i>Settings</a></li>
           </ul>
         </div>
       </nav>
@@ -74,7 +174,9 @@
       <!-- Main Content -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
         <!-- Hero -->
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden" style="background: url('assets/images/fandoms-bg.png') center/cover;">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center p-4 pb-5 mb-4 rounded-4 shadow-sm position-relative text-white overflow-hidden"
+          style="background: url('assets/images/fandoms-bg.png') center/cover;">
           <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
           <div class="position-relative z-1 d-flex w-100 justify-content-between align-items-center pt-2">
             <div>
@@ -88,13 +190,19 @@
           <div class="col-12 col-lg-3">
             <div class="card border-0 shadow-sm bg-white p-3 rounded-3">
               <div class="d-flex flex-column gap-1">
-                <button class="settings-nav-link active" onclick="showTab(this,'profile')"><i class="ph-fill ph-user me-2"></i>Profile</button>
-                <button class="settings-nav-link" onclick="showTab(this,'account')"><i class="ph-fill ph-lock-key me-2"></i>Account &amp; Security</button>
-                <button class="settings-nav-link" onclick="showTab(this,'notifications')"><i class="ph-fill ph-bell me-2"></i>Notifications</button>
-                <button class="settings-nav-link" onclick="showTab(this,'payouts')"><i class="ph-fill ph-bank me-2"></i>Payout Methods</button>
-                <button class="settings-nav-link" onclick="showTab(this,'privacy')"><i class="ph-fill ph-shield-check me-2"></i>Privacy</button>
+                <button class="settings-nav-link active" onclick="showTab(this,'profile')"><i
+                    class="ph-fill ph-user me-2"></i>Profile</button>
+                <button class="settings-nav-link" onclick="showTab(this,'account')"><i
+                    class="ph-fill ph-lock-key me-2"></i>Account &amp; Security</button>
+                <button class="settings-nav-link" onclick="showTab(this,'notifications')"><i
+                    class="ph-fill ph-bell me-2"></i>Notifications</button>
+                <button class="settings-nav-link" onclick="showTab(this,'payouts')"><i
+                    class="ph-fill ph-bank me-2"></i>Payout Methods</button>
+                <button class="settings-nav-link" onclick="showTab(this,'privacy')"><i
+                    class="ph-fill ph-shield-check me-2"></i>Privacy</button>
                 <hr class="my-1">
-                <button class="settings-nav-link text-danger" style="color:#dc3545" onclick="showTab(this,'danger')"><i class="ph-fill ph-warning-circle me-2"></i>Danger Zone</button>
+                <button class="settings-nav-link text-danger" style="color:#dc3545" onclick="showTab(this,'danger')"><i
+                    class="ph-fill ph-warning-circle me-2"></i>Danger Zone</button>
               </div>
             </div>
           </div>
@@ -111,7 +219,8 @@
                 <div class="d-flex align-items-center gap-4 mb-4">
                   <img src="https://i.pravatar.cc/200?img=57" class="avatar-ring" alt="Profile Avatar">
                   <div>
-                    <button class="btn btn-outline-primary btn-sm mb-1"><i class="ph-bold ph-upload-simple me-1"></i>Upload Photo</button>
+                    <button class="btn btn-outline-primary btn-sm mb-1"><i
+                        class="ph-bold ph-upload-simple me-1"></i>Upload Photo</button>
                     <p class="text-muted mb-0" style="font-size:.78rem">JPG, PNG or GIF · Max 2MB</p>
                   </div>
                 </div>
@@ -129,7 +238,8 @@
                   </div>
                   <div class="col-12">
                     <label class="form-label fw-semibold small">Bio</label>
-                    <textarea class="form-control" rows="3" placeholder="Tell readers about yourself…">Passionate fan fiction writer. MHA, Harry Potter &amp; original works. Coffee addict ☕ | Writing since 2019.</textarea>
+                    <textarea class="form-control" rows="3"
+                      placeholder="Tell readers about yourself…">Passionate fan fiction writer. MHA, Harry Potter &amp; original works. Coffee addict ☕ | Writing since 2019.</textarea>
                   </div>
                   <div class="col-md-6">
                     <label class="form-label fw-semibold small">Website / Social Link</label>
@@ -172,7 +282,8 @@
                     <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                       <div>
                         <div class="fw-semibold small">Two-Factor Authentication</div>
-                        <div class="text-muted" style="font-size:.78rem">Add an extra layer of security to your account</div>
+                        <div class="text-muted" style="font-size:.78rem">Add an extra layer of security to your account
+                        </div>
                       </div>
                       <label class="toggle-switch mb-0">
                         <input type="checkbox" checked>
@@ -198,33 +309,38 @@
                       <div class="fw-semibold small">New Comment on my story</div>
                       <div class="text-muted" style="font-size:.78rem">Get notified when someone leaves a comment</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">New Follower</div>
                       <div class="text-muted" style="font-size:.78rem">Get notified when someone follows you</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Kudos &amp; Bookmarks</div>
                       <div class="text-muted" style="font-size:.78rem">Notify me when my story receives kudos</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Payout Processed</div>
                       <div class="text-muted" style="font-size:.78rem">Notify me when a payout is sent</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Weekly Summary Email</div>
-                      <div class="text-muted" style="font-size:.78rem">Receive weekly analytics digest to your inbox</div>
+                      <div class="text-muted" style="font-size:.78rem">Receive weekly analytics digest to your inbox
+                      </div>
                     </div>
                     <label class="toggle-switch mb-0"><input type="checkbox"><span class="toggle-slider"></span></label>
                   </div>
@@ -233,7 +349,8 @@
                       <div class="fw-semibold small">Platform Announcements</div>
                       <div class="text-muted" style="font-size:.78rem">Stay up to date with FanFicHub updates</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                 </div>
                 <button class="btn btn-primary-custom fw-semibold px-4 mt-4">Save Preferences</button>
@@ -247,15 +364,18 @@
                 <p class="text-muted small mb-4">Manage where your earnings are sent.</p>
                 <!-- Current method -->
                 <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 mb-3">
-                  <div class="section-icon" style="background:#003087;color:#fff"><i class="ph-fill ph-paypal-logo fs-5"></i></div>
+                  <div class="section-icon" style="background:#003087;color:#fff"><i
+                      class="ph-fill ph-paypal-logo fs-5"></i></div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold">PayPal</div>
-                    <div class="small text-muted">writer@fanfichub.com · <span class="text-success fw-semibold">Primary</span></div>
+                    <div class="small text-muted">writer@fanfichub.com · <span
+                        class="text-success fw-semibold">Primary</span></div>
                   </div>
                   <button class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
                 <div class="d-flex align-items-center gap-3 p-3 bg-light rounded-3 mb-4">
-                  <div class="section-icon" style="background:#2f2f2f;color:#fff"><i class="ph-fill ph-bank fs-5"></i></div>
+                  <div class="section-icon" style="background:#2f2f2f;color:#fff"><i class="ph-fill ph-bank fs-5"></i>
+                  </div>
                   <div class="flex-grow-1">
                     <div class="fw-semibold">Bank Transfer (SEPA)</div>
                     <div class="small text-muted">IBAN ending ••• 4821</div>
@@ -263,7 +383,8 @@
                   <button class="btn btn-sm btn-outline-secondary">Edit</button>
                   <button class="btn btn-sm btn-outline-danger">Remove</button>
                 </div>
-                <button class="btn btn-outline-primary fw-semibold"><i class="ph-bold ph-plus me-1"></i>Add Payout Method</button>
+                <button class="btn btn-outline-primary fw-semibold"><i class="ph-bold ph-plus me-1"></i>Add Payout
+                  Method</button>
                 <hr>
                 <div class="row g-3">
                   <div class="col-md-6">
@@ -297,23 +418,27 @@
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Show my profile publicly</div>
-                      <div class="text-muted" style="font-size:.78rem">Your profile and stories are visible to everyone</div>
+                      <div class="text-muted" style="font-size:.78rem">Your profile and stories are visible to everyone
+                      </div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Allow comments on my stories</div>
                       <div class="text-muted" style="font-size:.78rem">Readers can leave comments on your work</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
                       <div class="fw-semibold small">Show earnings badge on profile</div>
                       <div class="text-muted" style="font-size:.78rem">Display your writer tier publicly</div>
                     </div>
-                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+                    <label class="toggle-switch mb-0"><input type="checkbox" checked><span
+                        class="toggle-slider"></span></label>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-3">
                     <div>
@@ -345,14 +470,16 @@
                       <div class="fw-semibold">Export All My Data</div>
                       <div class="text-muted small">Download all your stories, comments, and account data.</div>
                     </div>
-                    <button class="btn btn-sm btn-outline-secondary fw-semibold"><i class="ph-bold ph-download-simple me-1"></i>Export</button>
+                    <button class="btn btn-sm btn-outline-secondary fw-semibold"><i
+                        class="ph-bold ph-download-simple me-1"></i>Export</button>
                   </div>
                   <div class="d-flex justify-content-between align-items-center p-3 border border-danger rounded-3">
                     <div>
                       <div class="fw-semibold text-danger">Delete Account</div>
                       <div class="text-muted small">Permanently delete your account and all associated data.</div>
                     </div>
-                    <button class="btn btn-sm btn-danger fw-semibold" onclick="return confirm('Are you sure? This cannot be undone.')">Delete Forever</button>
+                    <button class="btn btn-sm btn-danger fw-semibold"
+                      onclick="return confirm('Are you sure? This cannot be undone.')">Delete Forever</button>
                   </div>
                 </div>
               </div>
@@ -374,11 +501,12 @@
       document.querySelectorAll('.settings-nav-link').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       // Show/hide tabs
-      ['profile','account','notifications','payouts','privacy','danger'].forEach(t => {
+      ['profile', 'account', 'notifications', 'payouts', 'privacy', 'danger'].forEach(t => {
         const el = document.getElementById('tab-' + t);
         if (el) el.style.display = (t === tabName) ? '' : 'none';
       });
     }
   </script>
 </body>
+
 </html>
